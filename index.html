@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Claude Code Meetup Taipei - April 2026</title>
+    <title>Claude Meetup Taipei - April 2026</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -813,7 +813,7 @@
             font-weight: inherit;
         }
 
-        .lang-zh .bilingual .en { display: block; }
+        .lang-zh .bilingual .en { display: none; }
         .lang-zh .bilingual .zh { display: block; }
     </style>
 </head>
@@ -823,7 +823,7 @@
         <div class="nav-container">
             <a href="#" class="logo">
                 <div class="logo-icon">CC</div>
-                <span>Claude Code Meetup</span>
+                <span>Claude Meetup</span>
             </a>
             <ul class="nav-links">
                 <li><a href="#features">
@@ -846,16 +846,10 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <div class="hero-badge">
-                <span class="bilingual">
-                    <span class="zh">🎉 活動企劃提案</span>
-                    <span class="en">🎉 Event Proposal</span>
-                </span>
-            </div>
             <h1>
                 <span class="bilingual">
-                    <span class="zh"><span class="highlight">Claude Code</span> Meetup Taipei</span>
-                    <span class="en"><span class="highlight">Claude Code</span> Meetup Taipei</span>
+                    <span class="zh"><span class="highlight">Claude</span> Meetup Taipei</span>
+                    <span class="en"><span class="highlight">Claude</span> Meetup Taipei</span>
                 </span>
             </h1>
             <p class="hero-subtitle">
@@ -886,7 +880,12 @@
                             <span class="en">Time</span>
                         </span>
                     </div>
-                    <div class="value">19:00 - 21:30</div>
+                    <div class="value">
+                        <span class="bilingual">
+                            <span class="zh">18:30 報到・19:30 開始</span>
+                            <span class="en">Check-in 18:30 · Starts 19:30</span>
+                        </span>
+                    </div>
                 </div>
                 <div class="hero-meta-item">
                     <div class="label">
@@ -913,12 +912,12 @@
                 </div>
             </div>
             <div class="cta-buttons">
-                <a href="https://luma.com/claudecommunity" target="_blank" class="btn btn-primary">
+                <span class="btn btn-disabled" style="opacity:0.45;cursor:not-allowed;background:var(--color-bg-card);color:var(--color-text-muted);border:1px solid var(--color-border);">
                     <span class="bilingual">
                         <span class="zh">立即報名</span>
                         <span class="en">Register Now</span>
                     </span>
-                </a>
+                </span>
                 <a href="#features" class="btn btn-secondary">
                     <span class="bilingual">
                         <span class="zh">活動特色</span>
@@ -926,6 +925,12 @@
                     </span>
                 </a>
             </div>
+            <p style="margin-top:1rem;font-size:0.85rem;color:var(--color-text-muted);">
+                <span class="bilingual">
+                    <span class="zh">⚠️ 報名尚未開放</span>
+                    <span class="en">⚠️ Registration not yet open</span>
+                </span>
+            </p>
         </div>
     </section>
 
@@ -1109,8 +1114,8 @@
     <footer>
         <p>
             <span class="bilingual">
-                <span class="zh">文件建立日期：2026 年 1 月 31 日 | Claude Code Meetup Taipei</span>
-                <span class="en">Document created: January 31, 2026 | Claude Code Meetup Taipei</span>
+                <span class="zh">文件建立日期：2026 年 1 月 31 日 | Claude Meetup Taipei</span>
+                <span class="en">Document created: January 31, 2026 | Claude Meetup Taipei</span>
             </span>
         </p>
     </footer>
