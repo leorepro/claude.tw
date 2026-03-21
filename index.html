@@ -9,16 +9,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --color-bg-dark: #1a1a1a;
-            --color-bg-section: #0f0f0f;
-            --color-bg-card: #252525;
-            --color-text-primary: #ffffff;
-            --color-text-secondary: #a3a3a3;
-            --color-text-muted: #737373;
-            --color-accent: #d97757;
-            --color-accent-hover: #e8896a;
-            --color-border: #333333;
-            --color-success: #4ade80;
+            --color-bg-dark: #F5F0EB;
+            --color-bg-section: #EDE7E0;
+            --color-bg-card: #FFFFFF;
+            --color-text-primary: #1A1612;
+            --color-text-secondary: #6B5E54;
+            --color-text-muted: #9B8E83;
+            --color-accent: #C96442;
+            --color-accent-hover: #B5522F;
+            --color-border: #DDD5CC;
+            --color-success: #2E7D4F;
             --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -48,7 +48,7 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            background: rgba(26, 26, 26, 0.9);
+            background: rgba(245, 240, 235, 0.92);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--color-border);
             padding: 1rem 2rem;
@@ -75,7 +75,7 @@
         .logo-icon {
             width: 32px;
             height: 32px;
-            background: linear-gradient(135deg, var(--color-accent), #f4a261);
+            background: linear-gradient(135deg, var(--color-accent), #D4845A);
             border-radius: 8px;
             display: flex;
             align-items: center;
@@ -138,8 +138,8 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle at 30% 20%, rgba(217, 119, 87, 0.08) 0%, transparent 50%),
-                        radial-gradient(circle at 70% 80%, rgba(217, 119, 87, 0.05) 0%, transparent 50%);
+            background: radial-gradient(circle at 30% 20%, rgba(201, 100, 66, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(201, 100, 66, 0.06) 0%, transparent 50%);
             animation: pulse 8s ease-in-out infinite;
         }
 
@@ -156,14 +156,14 @@
 
         .hero-badge {
             display: inline-block;
-            background: rgba(217, 119, 87, 0.15);
+            background: rgba(201, 100, 66, 0.1);
             color: var(--color-accent);
             padding: 0.5rem 1rem;
             border-radius: 100px;
             font-size: 0.85rem;
             font-weight: 500;
             margin-bottom: 2rem;
-            border: 1px solid rgba(217, 119, 87, 0.3);
+            border: 1px solid rgba(201, 100, 66, 0.25);
         }
 
         .hero h1 {
@@ -175,7 +175,7 @@
         }
 
         .hero h1 .highlight {
-            background: linear-gradient(135deg, var(--color-accent), #f4a261);
+            background: linear-gradient(135deg, var(--color-accent), #D4845A);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -245,7 +245,7 @@
         .btn-primary:hover {
             background: var(--color-accent-hover);
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(217, 119, 87, 0.3);
+            box-shadow: 0 10px 30px rgba(201, 100, 66, 0.25);
         }
 
         .btn-secondary {
@@ -256,7 +256,7 @@
 
         .btn-secondary:hover {
             border-color: var(--color-text-secondary);
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(201, 100, 66, 0.05);
         }
 
         /* Sections */
@@ -311,7 +311,7 @@
         }
 
         .schedule-item:hover {
-            border-color: rgba(217, 119, 87, 0.3);
+            border-color: rgba(201, 100, 66, 0.25);
             transform: translateX(4px);
         }
 
@@ -349,14 +349,14 @@
         }
 
         .feature-card:hover {
-            border-color: rgba(217, 119, 87, 0.3);
+            border-color: rgba(201, 100, 66, 0.25);
             transform: translateY(-4px);
         }
 
         .feature-icon {
             width: 48px;
             height: 48px;
-            background: rgba(217, 119, 87, 0.15);
+            background: rgba(201, 100, 66, 0.1);
             border-radius: 12px;
             display: flex;
             align-items: center;
@@ -527,7 +527,7 @@
             width: 10px;
             height: 10px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.4);
+            background: rgba(155, 142, 131, 0.4);
             border: none;
             cursor: pointer;
             transition: var(--transition-smooth);
@@ -541,7 +541,7 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(26, 22, 18, 0.6);
             color: white;
             border: none;
             width: 40px;
@@ -580,7 +580,7 @@
 
         .video-thumbnail:hover {
             transform: scale(1.02);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 20px 40px rgba(26, 22, 18, 0.15);
         }
 
         .video-thumbnail img {
@@ -608,7 +608,7 @@
             bottom: 1rem;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(26, 22, 18, 0.75);
             color: white;
             padding: 0.5rem 1rem;
             border-radius: 8px;
@@ -653,7 +653,7 @@
         }
 
         .venue-feature {
-            background: rgba(217, 119, 87, 0.1);
+            background: rgba(201, 100, 66, 0.08);
             color: var(--color-accent);
             padding: 0.5rem 1rem;
             border-radius: 100px;
@@ -678,7 +678,7 @@
         }
 
         .comparison-table th {
-            background: rgba(217, 119, 87, 0.1);
+            background: rgba(201, 100, 66, 0.08);
             font-weight: 600;
             font-size: 0.85rem;
             text-transform: uppercase;
@@ -694,7 +694,7 @@
         }
 
         .comparison-table .highlight-col {
-            background: rgba(217, 119, 87, 0.05);
+            background: rgba(201, 100, 66, 0.04);
         }
 
         /* Contact */
