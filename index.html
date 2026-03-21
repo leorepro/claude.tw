@@ -6,7 +6,7 @@
     <title>Taipei | Claude Meetup</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --color-bg-dark: #F5F0EB;
@@ -19,7 +19,8 @@
             --color-accent-hover: #B5522F;
             --color-border: #DDD5CC;
             --color-success: #2E7D4F;
-            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-family: 'Outfit', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-display: 'Outfit', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
             --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -60,6 +61,20 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+        }
+
+        .nav-container > .logo {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .nav-container > .nav-links {
+            flex: 0 0 auto;
+            margin: 0 2rem;
+        }
+
+        .nav-container > .lang-toggle {
+            flex: 0 0 auto;
         }
 
         .logo {
@@ -120,12 +135,12 @@
 
         /* Hero Section */
         .hero {
-            min-height: 100vh;
+            min-height: auto;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 8rem 2rem 4rem;
+            padding: 7rem 2rem 4rem;
             background: linear-gradient(180deg, var(--color-bg-section) 0%, var(--color-bg-dark) 100%);
             position: relative;
             overflow: hidden;
@@ -167,6 +182,7 @@
         }
 
         .hero h1 {
+            font-family: var(--font-display);
             font-size: clamp(2.5rem, 6vw, 4.5rem);
             font-weight: 700;
             line-height: 1.1;
@@ -281,6 +297,7 @@
         }
 
         .section-title {
+            font-family: var(--font-display);
             font-size: clamp(1.75rem, 4vw, 2.5rem);
             font-weight: 700;
             margin-bottom: 1rem;
@@ -707,6 +724,7 @@
         }
 
         .contact-section h2 {
+            font-family: var(--font-display);
             font-size: 2rem;
             font-weight: 700;
             margin-bottom: 1rem;
@@ -867,6 +885,202 @@
 
         .lang-zh .bilingual .en { display: none; }
         .lang-zh .bilingual .zh { display: block; }
+
+        /* Agenda Section */
+        .agenda-section {
+            background: var(--color-bg-section);
+            border-radius: 24px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            border: 1px solid var(--color-border);
+        }
+
+        .agenda-section h2 {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .agenda-section h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--color-text-primary);
+        }
+
+        .agenda-section h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .agenda-section p,
+        .agenda-section li {
+            font-size: 0.95rem;
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+        }
+
+        .agenda-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0.75rem 0;
+        }
+
+        .agenda-section ul li {
+            padding: 0.35rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .agenda-section ul li::before {
+            content: '•';
+            position: absolute;
+            left: 0.25rem;
+            color: var(--color-accent);
+            font-weight: 700;
+        }
+
+        .lang-note {
+            background: rgba(201, 100, 66, 0.08);
+            border: 1px solid rgba(201, 100, 66, 0.2);
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+            color: var(--color-text-secondary);
+        }
+
+        .lang-note strong {
+            color: var(--color-text-primary);
+        }
+
+        .agenda-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--color-bg-card);
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+
+        .agenda-table th,
+        .agenda-table td {
+            padding: 1rem 1.25rem;
+            text-align: left;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .agenda-table th {
+            background: rgba(201, 100, 66, 0.08);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .agenda-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .agenda-table .time-col {
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.9rem;
+            color: var(--color-accent);
+            font-weight: 600;
+            white-space: nowrap;
+            width: 140px;
+        }
+
+        .agenda-divider {
+            border: none;
+            border-top: 1px solid var(--color-border);
+            margin: 2rem 0;
+        }
+
+        .agenda-callout {
+            background: var(--color-bg-card);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .agenda-callout-accent {
+            border-left: 3px solid var(--color-accent);
+        }
+
+        .keynote-box {
+            background: linear-gradient(135deg, #1A1612 0%, #2E2520 100%);
+            border: none;
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin: 1.5rem 0;
+            color: #F5F0EB;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .keynote-box::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(201, 100, 66, 0.2) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .keynote-box h4 {
+            margin-top: 1.5rem;
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            color: #F5F0EB;
+            margin-bottom: 0.75rem;
+        }
+
+        .keynote-box h4:first-child {
+            margin-top: 0;
+        }
+
+        .keynote-box .speaker {
+            font-size: 0.95rem;
+            color: var(--color-accent);
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+            letter-spacing: 0.02em;
+        }
+
+        .keynote-box p,
+        .keynote-box li {
+            color: #C9BFB5 !important;
+            line-height: 1.8;
+        }
+
+        .keynote-box strong {
+            color: #F5F0EB;
+        }
+
+        .keynote-box ul {
+            margin: 0.5rem 0 1rem;
+        }
+
+        .keynote-box ul li::before {
+            color: var(--color-accent) !important;
+        }
+
+        @media (max-width: 768px) {
+            .agenda-section {
+                padding: 1.5rem;
+            }
+            .agenda-table .time-col {
+                width: auto;
+            }
+        }
     </style>
 </head>
 <body class="lang-zh">
@@ -878,6 +1092,12 @@
                 <span>Claude Meetup</span>
             </a>
             <ul class="nav-links">
+                <li><a href="#agenda">
+                    <span class="bilingual">
+                        <span class="zh">活動議程</span>
+                        <span class="en">Agenda</span>
+                    </span>
+                </a></li>
                 <li><a href="#features">
                     <span class="bilingual">
                         <span class="zh">活動特色</span>
@@ -888,6 +1108,12 @@
                     <span class="bilingual">
                         <span class="zh">場地</span>
                         <span class="en">Venue</span>
+                    </span>
+                </a></li>
+                <li><a href="#contact">
+                    <span class="bilingual">
+                        <span class="zh">聯絡</span>
+                        <span class="en">Contact</span>
                     </span>
                 </a></li>
             </ul>
@@ -906,8 +1132,8 @@
             </h1>
             <p class="hero-subtitle">
                 <span class="bilingual">
-                    <span class="zh">2026 年 4 月 9 日（週四）・場地待確認<br>小型深度技術交流聚會</span>
-                    <span class="en">April 9, 2026 (Thursday) · Venue TBD<br>An intimate technical meetup for deep discussions</span>
+                    <span class="zh">2026 年 4 月 9 日（週四） @ <a href="https://maps.app.goo.gl/oNoaYxYmGq6UrSWH8" target="_blank" style="color:var(--color-accent);text-decoration:none;">可能存在的樂園 CollaPlay</a><br>小型深度技術交流聚會</span>
+                    <span class="en">April 9, 2026 (Thursday) @ <a href="https://maps.app.goo.gl/oNoaYxYmGq6UrSWH8" target="_blank" style="color:var(--color-accent);text-decoration:none;">CollaPlay</a><br>An intimate technical meetup for deep discussions</span>
                 </span>
             </p>
             <div class="hero-meta">
@@ -970,12 +1196,6 @@
                         <span class="en">Register Now</span>
                     </span>
                 </span>
-                <a href="#features" class="btn btn-secondary">
-                    <span class="bilingual">
-                        <span class="zh">活動特色</span>
-                        <span class="en">Event Features</span>
-                    </span>
-                </a>
             </div>
             <p style="margin-top:1rem;font-size:0.85rem;color:var(--color-text-muted);">
                 <span class="bilingual">
@@ -984,6 +1204,418 @@
                 </span>
             </p>
         </div>
+    </section>
+
+    <!-- Agenda Section -->
+    <section id="agenda">
+        <div class="section-header">
+            <div class="section-label">Agenda</div>
+            <h2 class="section-title">
+                <span class="bilingual">
+                    <span class="zh">加入 Claude 社群活動</span>
+                    <span class="en">Join a Claude Community Event</span>
+                </span>
+            </h2>
+            <p class="section-subtitle">
+                <span class="bilingual">
+                    <span class="zh">由在地愛好者發起，獻給所有熱愛用 Claude Code 打造產品的你！</span>
+                    <span class="en">Organized by local enthusiasts for everyone who loves building with Claude Code!</span>
+                </span>
+            </p>
+        </div>
+
+        <!-- Language Note (EN only) -->
+        <div class="lang-note" style="display:none;" id="lang-note-en">
+            <strong>🌐 Language Note:</strong> This event is conducted primarily in Traditional Chinese. If you're not fluent in Chinese, you might find it challenging to follow the discussions and full experience. We recommend participants have a comfortable understanding of Traditional Chinese to get the most out of this Meetup.
+        </div>
+
+        <!-- Agenda Table -->
+        <div class="agenda-section">
+            <h2>
+                <span class="bilingual">
+                    <span class="zh">活動議程 | Event Agenda</span>
+                    <span class="en">Event Agenda</span>
+                </span>
+            </h2>
+            <table class="agenda-table">
+                <thead>
+                    <tr>
+                        <th>
+                            <span class="bilingual">
+                                <span class="zh">時間</span>
+                                <span class="en">Time</span>
+                            </span>
+                        </th>
+                        <th>
+                            <span class="bilingual">
+                                <span class="zh">內容</span>
+                                <span class="en">Content</span>
+                            </span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="time-col">18:30 - 19:00</td>
+                        <td>
+                            <span class="bilingual">
+                                <span class="zh">報到 (Check-in)</span>
+                                <span class="en">Check-in</span>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">19:00 - 19:05</td>
+                        <td>
+                            <span class="bilingual">
+                                <span class="zh">開場、場地介紹、API Token 兌換</span>
+                                <span class="en">Opening, Venue Introduction, API Token Exchange</span>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">19:05 - 19:50</td>
+                        <td>
+                            <span class="bilingual">
+                                <span class="zh">AI 許願學 — 講者：高見龍</span>
+                                <span class="en">AI Wish-Making Study — Speaker: Kao Chien-Long</span>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">19:50 - 20:00</td>
+                        <td>Q & A</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">20:00 - 20:30</td>
+                        <td>Lightning Talks</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">20:30 - 21:30</td>
+                        <td>Open Space</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Registration & Who Should Attend -->
+        <div class="agenda-section">
+            <h2>
+                <span class="bilingual">
+                    <span class="zh">報名須知 & 誰適合參加</span>
+                    <span class="en">Registration Requirements & Who Should Attend</span>
+                </span>
+            </h2>
+            <p style="margin-top: 1rem;">
+                <span class="bilingual">
+                    <span class="zh">你是軟體工程師，日常開發中用過（或至少聽過）<strong>TDD、SDD、Design Pattern、Refactor、Clean Code</strong> 等實踐，並嘗試用 <strong>Claude Code</strong> 來落實這些工程原則——<br><br><strong>這次的 Meetup 找的就是你！</strong><br><br>我們希望在這裡找到有相同經歷的夥伴，一起討論、互相學習，帶回有價值的東西。</span>
+                    <span class="en">You're a software engineer who has used (or at least heard of) <strong>TDD, SDD, Design Pattern, Refactor, Clean Code</strong> and similar engineering practices in your daily development. You're also trying to apply these principles using <strong>Claude Code</strong>——<br><br><strong>This Meetup is exactly for you!</strong><br><br>We're looking for people with similar experiences to discuss together, learn from each other, and bring home valuable insights.</span>
+                </span>
+            </p>
+
+            <h3>
+                <span class="bilingual">
+                    <span class="zh">如果你不是軟體工程師？</span>
+                    <span class="en">Not a software engineer?</span>
+                </span>
+            </h3>
+            <p>
+                <span class="bilingual">
+                    <span class="zh">也歡迎<a href="#contact" style="color:var(--color-accent)">反映給我們</a>！人數夠的話，我們很樂於在未來舉辦針對其他職位（如產品、設計、行銷等）的 Claude Meetup。</span>
+                    <span class="en">No worries! Feel free to <a href="#contact" style="color:var(--color-accent)">reach out to us</a>. If we have enough interest, we'd be happy to organize Claude Meetups for other roles (such as product, design, marketing, etc.) in the future.</span>
+                </span>
+            </p>
+
+            <hr class="agenda-divider">
+
+            <div class="agenda-callout agenda-callout-accent">
+                <h4>
+                    <span class="bilingual">
+                        <span class="zh">🎤 投稿 Lightning Talk 的優先序</span>
+                        <span class="en">🎤 Priority for Lightning Talk Speakers</span>
+                    </span>
+                </h4>
+                <p>
+                    <span class="bilingual">
+                        <span class="zh">報名時選擇投稿 Lightning Talk，將會獲得<strong>較高的優先序</strong>來參加 Meetup。</span>
+                        <span class="en">If you submit a Lightning Talk proposal during registration, you'll receive <strong>higher priority</strong> for attending this Meetup.</span>
+                    </span>
+                </p>
+            </div>
+
+            <div class="agenda-callout agenda-callout-accent">
+                <h4>
+                    <span class="bilingual">
+                        <span class="zh">⚠️ 關於出席記錄</span>
+                        <span class="en">⚠️ Attendance Records</span>
+                    </span>
+                </h4>
+                <p>
+                    <span class="bilingual">
+                        <span class="zh">AI 相關活動最近常爆滿，位置非常珍貴。我們希望報名的朋友都是確定會出席的。因此我們會記錄出席情況，幫助未來更好地安排活動。</span>
+                        <span class="en">AI-related events are super popular these days, and spots are precious. We hope everyone who registers is genuinely committed to attending. That's why we keep track of attendance to help us organize better events in the future.</span>
+                    </span>
+                </p>
+                <ul>
+                    <li>
+                        <span class="bilingual">
+                            <span class="zh"><strong>出席記錄</strong> — 確保位置分配給真正想來的朋友</span>
+                            <span class="en"><strong>Attendance Records</strong> — Ensuring spots go to people who really want to be there</span>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="bilingual">
+                            <span class="zh"><strong>影響篩選</strong> — 無故缺席會在下次報名時影響篩選，但提前告知或有合理原因完全沒問題</span>
+                            <span class="en"><strong>Affects Future Selection</strong> — No-shows may impact your priority in future registrations. However, if you let us know in advance or have a legitimate reason, that's completely fine</span>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="bilingual">
+                            <span class="zh"><strong>請提前告知</strong> — 如果無法參加，請盡早通知或自行取消 Luma 報名。我們理解人生會有變化，溝通就是一切</span>
+                            <span class="en"><strong>Please Let Us Know Early</strong> — If you can't make it, please notify us or cancel your Luma registration early. We understand life happens, and communication is everything</span>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- What's Included -->
+        <div class="agenda-section">
+            <h2>
+                <span class="bilingual">
+                    <span class="zh">Meetup 有提供什麼</span>
+                    <span class="en">What's Included</span>
+                </span>
+            </h2>
+            <ul>
+                <li>
+                    <span class="bilingual">
+                        <span class="zh">Claude 的 API Credit</span>
+                        <span class="en">Claude API Credit</span>
+                    </span>
+                </li>
+                <li>
+                    <span class="bilingual">
+                        <span class="zh">Claude 官方貼紙</span>
+                        <span class="en">Official Claude Stickers</span>
+                    </span>
+                </li>
+                <li>
+                    <span class="bilingual">
+                        <span class="zh">簡單的餐食和茶飲（小補給，建議吃飽再來～西門町周邊美食很多！）</span>
+                        <span class="en">Light refreshments and beverages (Just snacks—we recommend eating beforehand! There are tons of great food options around Ximending!)</span>
+                    </span>
+                </li>
+                <li>
+                    <span class="bilingual">
+                        <span class="zh"><strong>注意：</strong>因為時差的關係，4/9 這場 Meetup 是沒有官方 Live Q&A 的喔！</span>
+                        <span class="en"><strong>Note:</strong> Due to time zone differences, the April 9th Meetup won't have official Live Q&A</span>
+                    </span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Keynote -->
+        <div class="agenda-section" style="background: transparent; border: none; padding: 3rem 0;">
+            <h2>
+                <span class="bilingual">
+                    <span class="zh">主題演講</span>
+                    <span class="en">Featured Talk</span>
+                </span>
+            </h2>
+            <div class="keynote-box">
+                <h4>
+                    <span class="bilingual">
+                        <span class="zh">「AI 許願學」</span>
+                        <span class="en">"AI Wish-Making Study"</span>
+                    </span>
+                </h4>
+                <div class="speaker">
+                    <span class="bilingual">
+                        <span class="zh">講者：高見龍</span>
+                        <span class="en">Speaker: Kao Chien-Long</span>
+                    </span>
+                </div>
+
+                <h4>
+                    <span class="bilingual">
+                        <span class="zh">核心概念</span>
+                        <span class="en">Core Concept</span>
+                    </span>
+                </h4>
+                <p>
+                    <span class="bilingual">
+                        <span class="zh">Vibe Coding 就像跟 AI 許願——拿出一個精美的 prompt 當作祭品丟給 AI，然後它就把東西做出來了。但真的能成功嗎？<br><br><strong>向 AI 許願得到的是流星還是隕石，取決於許願的方式。</strong></span>
+                        <span class="en">Vibe Coding is like making a wish to AI—you offer a beautiful prompt as a sacrifice to the AI, and boom, it delivers. But does it really work that way?<br><br><strong>Whether you get a shooting star or a meteorite from your AI wish depends on how you make the wish.</strong></span>
+                    </span>
+                </p>
+
+                <h4>
+                    <span class="bilingual">
+                        <span class="zh">常見迷思</span>
+                        <span class="en">Common Misconceptions</span>
+                    </span>
+                </h4>
+                <ul>
+                    <li>
+                        <span class="bilingual">
+                            <span class="zh">Prompt 寫得不好？</span>
+                            <span class="en">Bad Prompt writing?</span>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="bilingual">
+                            <span class="zh">模型不夠聰明？</span>
+                            <span class="en">Model not smart enough?</span>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="bilingual">
+                            <span class="zh">訂閱費用不夠燒？</span>
+                            <span class="en">Not spending enough money on subscriptions?</span>
+                        </span>
+                    </li>
+                </ul>
+                <p style="margin-top: 1rem;">
+                    <span class="bilingual">
+                        <span class="zh"><strong>真正的瓶頸是：你沒有把規格講清楚。</strong></span>
+                        <span class="en"><strong>The real bottleneck is: you didn't spell out your specifications clearly.</strong></span>
+                    </span>
+                </p>
+
+                <h4>
+                    <span class="bilingual">
+                        <span class="zh">這場分享你會學到</span>
+                        <span class="en">What You'll Learn</span>
+                    </span>
+                </h4>
+                <ul>
+                    <li>
+                        <span class="bilingual">
+                            <span class="zh">為什麼你的 AI 願望常常變成隕石</span>
+                            <span class="en">Why your AI wishes often turn into meteorites</span>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="bilingual">
+                            <span class="zh">如何將需求結構化為清晰的規格</span>
+                            <span class="en">How to structure requirements into clear specifications</span>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="bilingual">
+                            <span class="zh">如何讓 AI 每次都從正確的起點開始</span>
+                            <span class="en">How to ensure the AI starts from the right place every time</span>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="bilingual">
+                            <span class="zh">從「許願」到「下訂單」的轉變</span>
+                            <span class="en">From "making a wish" to "placing an order"</span>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Lightning Talks -->
+        <div class="agenda-section">
+            <h2>
+                <span class="bilingual">
+                    <span class="zh">Lightning Talks 詳細說明</span>
+                    <span class="en">Lightning Talks Details</span>
+                </span>
+            </h2>
+            <p style="margin-top: 1rem;">
+                <span class="bilingual">
+                    <span class="zh"><strong>時間：</strong>每位講者 3 分鐘</span>
+                    <span class="en"><strong>Duration:</strong> 3 minutes per speaker</span>
+                </span>
+            </p>
+
+            <h3>
+                <span class="bilingual">
+                    <span class="zh">分享主題方向</span>
+                    <span class="en">Topic Directions</span>
+                </span>
+            </h3>
+            <ul>
+                <li>
+                    <span class="bilingual">
+                        <span class="zh">如何用 Claude 加速開發流程</span>
+                        <span class="en">How Claude accelerates your development workflow</span>
+                    </span>
+                </li>
+                <li>
+                    <span class="bilingual">
+                        <span class="zh">遇到的挑戰和解決方案</span>
+                        <span class="en">Challenges you faced and solutions you found</span>
+                    </span>
+                </li>
+                <li>
+                    <span class="bilingual">
+                        <span class="zh">工程最佳實踐的結合應用</span>
+                        <span class="en">Combining engineering best practices with Claude</span>
+                    </span>
+                </li>
+                <li>
+                    <span class="bilingual">
+                        <span class="zh">團隊或個人的成果分享</span>
+                        <span class="en">Team or personal success stories</span>
+                    </span>
+                </li>
+            </ul>
+
+            <h3>
+                <span class="bilingual">
+                    <span class="zh">投稿規則</span>
+                    <span class="en">Submission Rules</span>
+                </span>
+            </h3>
+            <ul>
+                <li>
+                    <span class="bilingual">
+                        <span class="zh">報名時可選擇投稿 Lightning Talk</span>
+                        <span class="en">You can choose to submit a Lightning Talk proposal during registration</span>
+                    </span>
+                </li>
+                <li>
+                    <span class="bilingual">
+                        <span class="zh">若投稿人數超過 12 位，我們將在當天讓大家票選最想聽的講題</span>
+                        <span class="en">If submissions exceed 12, we'll hold a vote on the day to decide which talks to feature</span>
+                    </span>
+                </li>
+                <li>
+                    <span class="bilingual">
+                        <span class="zh">當天沒被選上也不用灰心，Open Space 可以讓你自由分享與交流</span>
+                        <span class="en">Don't make the cut? No worries! You can still share freely during Open Space</span>
+                    </span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Why Small Group -->
+        <div class="agenda-section">
+            <h2>
+                <span class="bilingual">
+                    <span class="zh">人數不能更多嗎？</span>
+                    <span class="en">Why Such a Small Group?</span>
+                </span>
+            </h2>
+            <p style="margin-top: 1rem;">
+                <span class="bilingual">
+                    <span class="zh">我知道大家都很想獲得最新資訊和交流機會。但在 Meetup 形式還未完全穩定前，我希望能專注於每次的品質，通過各位的回饋不斷改進。<br><br>若無法參加但想要知道 meetup 都分享了些什麼，我們會整理到 <a href="https://claude.tw" style="color:var(--color-accent)">https://claude.tw</a> 上分享給大家。<br><br>如果你希望有針對其他角色（產品、設計、行銷等）的 Meetup，<a href="#contact" style="color:var(--color-accent)">歡迎聯繫我們</a>！</span>
+                    <span class="en">I know everyone wants the latest information and chance to network. But while we're still figuring out the best format for these Meetups, I want to focus on <strong>quality over quantity</strong>, improving based on your feedback each time.<br><br>Can't attend but still want to know what we discussed? Don't worry—we'll compile everything and share it on <a href="https://claude.tw" style="color:var(--color-accent)">https://claude.tw</a> for you!<br><br>If you're interested in Meetups focused on <strong>other roles</strong> (product, design, marketing, etc.), <a href="#contact" style="color:var(--color-accent)">reach out to us</a>!</span>
+                </span>
+            </p>
+        </div>
+
+        <p style="text-align:center; color:var(--color-text-muted); font-size:0.9rem; margin-top:2rem;">
+            <span class="bilingual">
+                <span class="zh">感謝各位對這個社群活動的支持。讓我們一起維護一個有品質、互相尊重的社群環境！</span>
+                <span class="en">Thank you for supporting this community event. Let's work together to maintain a high-quality, respectful community environment!</span>
+            </span>
+        </p>
     </section>
 
     <!-- Features Section -->
@@ -1090,34 +1722,84 @@
             <div class="section-label">Venue</div>
             <h2 class="section-title">
                 <span class="bilingual">
-                    <span class="zh">場地待定</span>
-                    <span class="en">Venue TBD</span>
+                    <span class="zh">可能存在的樂園 CollaPlay</span>
+                    <span class="en">CollaPlay</span>
                 </span>
             </h2>
+            <p class="section-subtitle">
+                <span class="bilingual">
+                    <span class="zh">108 台北市萬華區昆明街 90 號</span>
+                    <span class="en">No. 90, Kunming St., Wanhua Dist., Taipei 108</span>
+                </span>
+            </p>
         </div>
-        <div class="venue-placeholder" style="max-width: 600px; margin: 0 auto; padding: 4rem 2rem;">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-            </svg>
-            <p style="font-size: 1.5rem; font-weight: 600; color: var(--color-text-secondary); margin-bottom: 0.5rem;">
-                <span class="bilingual">
-                    <span class="zh">待確認 / TBD</span>
-                    <span class="en">待確認 / TBD</span>
-                </span>
-            </p>
-            <p style="font-size: 0.95rem; color: var(--color-text-muted); text-align: center;">
-                <span class="bilingual">
-                    <span class="zh">場地資訊將於近期公佈，敬請期待</span>
-                    <span class="en">Venue details will be announced soon. Stay tuned!</span>
-                </span>
-            </p>
+        <div class="venue-content">
+            <div class="venue-gallery">
+                <div class="venue-slider" id="venueSlider">
+                    <div class="venue-slide"><img src="images/venue-hall.jpg" alt="CollaPlay 主要活動空間" loading="lazy"></div>
+                    <div class="venue-slide"><img src="images/venue-lounge.jpg" alt="CollaPlay 休息區" loading="lazy"></div>
+                    <div class="venue-slide"><img src="images/venue-slide.jpg" alt="CollaPlay 溜滑梯" loading="lazy"></div>
+                </div>
+                <button class="venue-nav prev" onclick="changeSlide(-1)">‹</button>
+                <button class="venue-nav next" onclick="changeSlide(1)">›</button>
+                <div class="venue-dots">
+                    <button class="venue-dot active" onclick="goToSlide(0)"></button>
+                    <button class="venue-dot" onclick="goToSlide(1)"></button>
+                    <button class="venue-dot" onclick="goToSlide(2)"></button>
+                </div>
+            </div>
+            <div class="venue-info">
+                <h3>
+                    <span class="bilingual">
+                        <span class="zh">可能存在的樂園 CollaPlay</span>
+                        <span class="en">CollaPlay</span>
+                    </span>
+                </h3>
+                <p>
+                    <span class="bilingual">
+                        <span class="zh">108 台北市萬華區昆明街 90 號</span>
+                        <span class="en">No. 90, Kunming St., Wanhua Dist., Taipei 108</span>
+                    </span>
+                </p>
+                <a href="https://maps.app.goo.gl/oNoaYxYmGq6UrSWH8" target="_blank" class="btn btn-secondary" style="margin-bottom: 1.5rem;">
+                    <span class="bilingual">
+                        <span class="zh">在 Google Maps 中開啟</span>
+                        <span class="en">Open in Google Maps</span>
+                    </span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+                <div class="venue-features">
+                    <span class="venue-feature">
+                        <span class="bilingual">
+                            <span class="zh">近西門站</span>
+                            <span class="en">Near Ximen MRT</span>
+                        </span>
+                    </span>
+                    <span class="venue-feature">
+                        <span class="bilingual">
+                            <span class="zh">萬華區</span>
+                            <span class="en">Wanhua District</span>
+                        </span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div style="margin-top: 2rem; border-radius: 16px; overflow: hidden;">
+            <iframe
+                src="https://maps.google.com/maps?q=%E5%8F%AF%E8%83%BD%E5%AD%98%E5%9C%A8%E7%9A%84%E6%A8%82%E5%9C%92+CollaPlay+%E5%8F%B0%E5%8C%97%E5%B8%82%E8%90%AC%E8%8F%AF%E5%8D%80%E6%98%86%E6%98%8E%E8%A1%9790%E8%99%9F&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="300"
+                style="border:0; display:block;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
         </div>
     </section>
 
 
     <!-- Contact Section -->
-    <section>
+    <section id="contact">
         <div class="contact-section">
             <h2>
                 <span class="bilingual">
@@ -1144,6 +1826,10 @@
                 <div class="contact-item">
                     <div class="label">Threads</div>
                     <div class="value"><a href="https://www.threads.com/@debuguy.dev" target="_blank">@debuguy.dev</a></div>
+                </div>
+                <div class="contact-item">
+                    <div class="label">LinkedIn</div>
+                    <div class="value"><a href="https://www.linkedin.com/in/jrting-shiau-77b0ab225/" target="_blank">Jrting Shiau</a></div>
                 </div>
             </div>
 
@@ -1175,12 +1861,15 @@
 <script>
         function toggleLanguage() {
             const body = document.body;
+            const langNote = document.getElementById('lang-note-en');
             if (body.classList.contains('lang-zh')) {
                 body.classList.remove('lang-zh');
                 body.classList.add('lang-en');
+                if (langNote) langNote.style.display = 'block';
             } else {
                 body.classList.remove('lang-en');
                 body.classList.add('lang-zh');
+                if (langNote) langNote.style.display = 'none';
             }
         }
 
@@ -1213,9 +1902,28 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.feature-card').forEach(el => {
+        // Venue slider
+        let currentSlide = 0;
+        const slider = document.getElementById('venueSlider');
+        const dots = document.querySelectorAll('.venue-dot');
+        const totalSlides = 3;
+
+        function goToSlide(n) {
+            currentSlide = n;
+            slider.style.transform = `translateX(-${n * 100}%)`;
+            dots.forEach((d, i) => d.classList.toggle('active', i === n));
+        }
+
+        function changeSlide(dir) {
+            goToSlide((currentSlide + dir + totalSlides) % totalSlides);
+        }
+
+        // Auto-advance every 5s
+        setInterval(() => changeSlide(1), 5000);
+
+        document.querySelectorAll('.feature-card, .agenda-section, .keynote-box, .venue-content, .contact-section').forEach((el, i) => {
             el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
+            el.style.transform = 'translateY(24px)';
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(el);
         });
