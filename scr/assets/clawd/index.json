@@ -1,0 +1,72 @@
+{
+  "collection": "clawd",
+  "version": 1,
+  "namingConvention": "clawd-{variant}.png",
+  "assets": [
+    {
+      "id": "base",
+      "filename": "clawd-base.png",
+      "label": "Clawd Base"
+    },
+    {
+      "id": "happy",
+      "filename": "clawd-happy.png",
+      "label": "Clawd Happy"
+    },
+    {
+      "id": "heart",
+      "filename": "clawd-heart.png",
+      "label": "Clawd Heart"
+    },
+    {
+      "id": "cape",
+      "filename": "clawd-cape.png",
+      "label": "Clawd Cape"
+    },
+    {
+      "id": "kite",
+      "filename": "clawd-kite.png",
+      "label": "Clawd Kite"
+    },
+    {
+      "id": "bubble",
+      "filename": "clawd-bubble.png",
+      "label": "Clawd Bubble"
+    },
+    {
+      "id": "dizzy",
+      "filename": "clawd-dizzy.png",
+      "label": "Clawd Dizzy"
+    },
+    {
+      "id": "book",
+      "filename": "clawd-book.png",
+      "label": "Clawd Book"
+    },
+    {
+      "id": "magnifier",
+      "filename": "clawd-magnifier.png",
+      "label": "Clawd Magnifier"
+    },
+    {
+      "id": "lightbulb",
+      "filename": "clawd-lightbulb.png",
+      "label": "Clawd Lightbulb"
+    },
+    {
+      "id": "headphones",
+      "filename": "clawd-headphones.png",
+      "label": "Clawd Headphones"
+    },
+    {
+      "id": "wand",
+      "filename": "clawd-wand.png",
+      "label": "Clawd Wand"
+    },
+    {
+      "id": "coffee",
+      "filename": "clawd-coffee.png",
+      "label": "Clawd Coffee"
+    }
+  ]
+}

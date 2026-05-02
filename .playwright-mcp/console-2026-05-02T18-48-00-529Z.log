@@ -1,0 +1,4 @@
+[    1910ms] [ERROR] Refused to apply style from 'https://vectorseek.com/wp-content/plugins/ajax-search-pro/css/style.css' because its MIME type ('text/html') is not a supported stylesheet MIME type, and strict MIME checking is enabled. @ https://vectorseek.com/vector_logo/claude-logo-png-svg-vector/:0
+[    3471ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[    4154ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://vectorseek.com/assets/linkedin.png:0
+[    4189ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://vectorseek.com/assets/facebook.png:0
