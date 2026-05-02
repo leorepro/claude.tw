@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Claude Cowork Workshop · Claude Community Taiwan</title>
+    <title>Claude Community Taiwan</title>
     <meta name="description" content="2026 年 5 月 9 日（六）@ N24 台北方舟｜入門教學 × 業界實戰分享，為 AI 新手與職場專業人士打開 Claude 協作的大門">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="scr/assets/clawd/clawd-base.png">
-    <link rel="apple-touch-icon" href="scr/assets/clawd/clawd-base.png">
+    <link rel="icon" type="image/png" href="scr/assets/clawd/favicon-clawd.png">
+    <link rel="apple-touch-icon" href="scr/assets/clawd/favicon-clawd.png">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -860,6 +860,41 @@
             opacity: 0.85;
         }
 
+        /* Event Co-hosts (this-event-only) */
+        .cohosts-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-2);
+            margin-top: var(--space-3);
+        }
+
+        @media (max-width: 900px) {
+            .cohosts-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .cohosts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .cohost-card {
+            background: var(--color-bg-card);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--color-text-primary);
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 60px;
+        }
+
         /* Footer */
         footer {
             padding: var(--space-2) 2rem;
@@ -1207,7 +1242,7 @@
         <div class="nav-container">
             <a href="#" class="logo">
                 <img class="logo-icon" src="scr/assets/clawd/clawd-base.png" alt="Clawd">
-                <span>Claude Meetup</span>
+                <span>Claude Community Taiwan</span>
             </a>
             <ul class="nav-links">
                 <li><a href="#agenda">
@@ -1708,6 +1743,38 @@
         </div>
     </section>
 
+    <!-- Event Co-hosts Section -->
+    <section id="cohosts">
+        <div class="agenda-section">
+            <h2>
+                <span class="bilingual">
+                    <span class="zh">本場活動共同主辦單位</span>
+                    <span class="en">Event Co-organizing Partners</span>
+                </span>
+            </h2>
+            <div class="cohosts-grid">
+                <div class="cohost-card">Onboard</div>
+                <div class="cohost-card">
+                    <span class="bilingual">
+                        <span class="zh">FUTUREMODE 台灣未來祭</span>
+                        <span class="en">FUTUREMODE — Taiwan Future Festival</span>
+                    </span>
+                </div>
+                <div class="cohost-card">
+                    <span class="bilingual">
+                        <span class="zh">臺灣區塊鏈愛好者協會</span>
+                        <span class="en">Taiwan Blockchain Enthusiasts Association</span>
+                    </span>
+                </div>
+                <div class="cohost-card">
+                    <span class="bilingual">
+                        <span class="zh">給行銷人的AI小聚</span>
+                        <span class="en">AI for Marketers Meetup</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Contact Section -->
     <section id="contact">

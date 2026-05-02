@@ -1,0 +1,289 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "Clawd Claude Community Taiwan" [ref=e4] [cursor=pointer]:
+        - /url: "#"
+        - img "Clawd" [ref=e5]
+        - generic [ref=e6]: Claude Community Taiwan
+      - list [ref=e7]:
+        - listitem [ref=e8]:
+          - link "活動議程" [ref=e9] [cursor=pointer]:
+            - /url: "#agenda"
+            - generic [ref=e11]: 活動議程
+        - listitem [ref=e12]:
+          - link "活動特色" [ref=e13] [cursor=pointer]:
+            - /url: "#features"
+            - generic [ref=e15]: 活動特色
+        - listitem [ref=e16]:
+          - link "場地" [ref=e17] [cursor=pointer]:
+            - /url: "#venue"
+            - generic [ref=e19]: 場地
+        - listitem [ref=e20]:
+          - link "聯絡" [ref=e21] [cursor=pointer]:
+            - /url: "#contact"
+            - generic [ref=e23]: 聯絡
+      - button "中/EN" [ref=e24] [cursor=pointer]
+  - generic [ref=e25]:
+    - img
+    - img
+    - generic [ref=e26]:
+      - heading "Claude Cowork Workshop" [level=1] [ref=e27]:
+        - generic [ref=e29]: Claude Cowork Workshop
+      - paragraph [ref=e30]:
+        - generic [ref=e32]:
+          - text: 2026 年 5 月 9 日（週六） @
+          - link "N24 台北方舟" [ref=e33] [cursor=pointer]:
+            - /url: https://www.google.com/maps/search/?api=1&query=N24+%E5%8F%B0%E5%8C%97%E6%96%B9%E8%88%9F+%E5%8F%B0%E5%8C%97%E5%B8%82%E5%8D%97%E6%B8%AF%E5%8D%80%E5%B8%82%E6%B0%91%E5%A4%A7%E9%81%93%E5%85%AD%E6%AE%B5100%E8%99%9F
+          - text: 入門教學 × 業界實戰分享，
+          - text: 為 AI 新手與職場專業人士打開 Claude 協作的大門
+      - generic [ref=e34]:
+        - generic [ref=e35]:
+          - generic [ref=e38]: 日期
+          - generic [ref=e41]: 2026 年 5 月 9 日（週六）
+        - generic [ref=e42]:
+          - generic [ref=e45]: 時間
+          - generic [ref=e48]: 13:30 報到・14:00 開始
+        - generic [ref=e49]:
+          - generic [ref=e52]: 座位
+          - generic [ref=e55]: 70 席（先到先入座）
+        - generic [ref=e56]:
+          - generic [ref=e59]: 瀏覽全球 Meetup
+          - link "Lu.ma" [ref=e61] [cursor=pointer]:
+            - /url: https://luma.com/claudecommunity
+      - link "立即報名" [ref=e63] [cursor=pointer]:
+        - /url: https://luma.com/purwya66
+        - generic [ref=e65]: 立即報名
+  - generic [ref=e67]:
+    - heading "活動議程 | Event Agenda" [level=2] [ref=e68]:
+      - generic [ref=e70]: 活動議程 | Event Agenda
+    - paragraph [ref=e71]:
+      - generic [ref=e73]: 從 Claude Desktop 基礎操作開始，一步步掌握 AI 協作技巧；接著由業界專家分享如何把 Claude 落實到日常與商業挑戰中。
+    - table [ref=e74]:
+      - rowgroup [ref=e75]:
+        - row "時間 內容" [ref=e76]:
+          - columnheader "時間" [ref=e77]:
+            - generic [ref=e79]: 時間
+          - columnheader "內容" [ref=e80]:
+            - generic [ref=e82]: 內容
+      - rowgroup [ref=e83]:
+        - row "13:30 - 14:00 報到入場 (Check-in)" [ref=e84]:
+          - cell "13:30 - 14:00" [ref=e85]
+          - cell "報到入場 (Check-in)" [ref=e86]:
+            - generic [ref=e88]: 報到入場 (Check-in)
+        - row "14:00 - 14:10 Opening" [ref=e89]:
+          - cell "14:00 - 14:10" [ref=e90]
+          - cell "Opening" [ref=e91]:
+            - generic [ref=e93]: Opening
+        - row "14:10 - 16:00 Workshop：Claude Cowork for Beginner — Justin Claude Cowork 入門教學、實用應用案例分享" [ref=e94]:
+          - cell "14:10 - 16:00" [ref=e95]
+          - cell "Workshop：Claude Cowork for Beginner — Justin Claude Cowork 入門教學、實用應用案例分享" [ref=e96]:
+            - generic [ref=e98]:
+              - strong [ref=e99]: Workshop：Claude Cowork for Beginner
+              - text: — Justin
+              - text: Claude Cowork 入門教學、實用應用案例分享
+        - row "16:00 - 17:00 Panel：Claude 實戰經驗談 — Justin、Hana、Konois、Dawson 業界專家對談，分享 Claude 在各領域的實戰案例與避坑經驗" [ref=e100]:
+          - cell "16:00 - 17:00" [ref=e101]
+          - cell "Panel：Claude 實戰經驗談 — Justin、Hana、Konois、Dawson 業界專家對談，分享 Claude 在各領域的實戰案例與避坑經驗" [ref=e102]:
+            - generic [ref=e104]:
+              - strong [ref=e105]: Panel：Claude 實戰經驗談
+              - text: — Justin、Hana、Konois、Dawson
+              - text: 業界專家對談，分享 Claude 在各領域的實戰案例與避坑經驗
+        - row "17:00 - 17:30 自由交流 Networking" [ref=e106]:
+          - cell "17:00 - 17:30" [ref=e107]
+          - cell "自由交流 Networking" [ref=e108]:
+            - generic [ref=e110]: 自由交流 Networking
+  - generic [ref=e112]:
+    - heading "講者陣容" [level=2] [ref=e113]:
+      - generic [ref=e115]: 講者陣容
+    - paragraph [ref=e116]:
+      - generic [ref=e118]: 由 Claude 官方社群大使 Justin 主持入門 Workshop，並邀請業界四位實戰派講者分享 Claude 在各領域的應用心得。
+    - generic [ref=e119]:
+      - generic [ref=e120]: 14:10 - 16:00
+      - generic [ref=e123]: Workshop 主講
+      - generic [ref=e126]: 入門教學
+    - generic [ref=e128]:
+      - img
+      - generic [ref=e129]: Justin
+      - generic [ref=e132]: Claude Ambassador / 41.tech 共同創辦人
+    - generic [ref=e133]:
+      - generic [ref=e134]: 16:00 - 17:00
+      - generic [ref=e137]: Panel 對談
+      - generic [ref=e140]: 業界實戰
+    - generic [ref=e141]:
+      - generic [ref=e142]:
+        - img
+        - generic [ref=e143]: Justin
+        - generic [ref=e146]: Claude Ambassador / 41.tech 共同創辦人
+      - generic [ref=e147]:
+        - img
+        - generic [ref=e148]: Hana 花水木
+        - generic [ref=e151]: 獎金獵人平台 共同創辦人
+      - generic [ref=e152]:
+        - img
+        - generic [ref=e153]: Konois 謝綸
+        - generic [ref=e156]: Aotter 電獺 共同創辦人
+      - generic [ref=e157]:
+        - img
+        - generic [ref=e158]: Dawson 王宇和
+        - generic [ref=e161]: AI 增效師
+  - generic [ref=e163]:
+    - heading "這場活動適合誰" [level=2] [ref=e164]:
+      - generic [ref=e166]: 這場活動適合誰
+    - paragraph [ref=e167]:
+      - generic [ref=e169]:
+        - text: 無論你是
+        - strong [ref=e170]: AI 新手
+        - text: ，還是想提升工作效率的
+        - strong [ref=e171]: 職場專業人士
+        - text: ，這場活動都會為你打開 Claude 協作的全新視野。我們會從最基礎的 Claude Desktop 操作開始，帶你一步步掌握 AI 協作技巧，再由業界重量級講者分享實戰案例。
+    - separator [ref=e172]
+    - generic [ref=e173]:
+      - heading "注意事項" [level=4] [ref=e174]:
+        - img [ref=e175]
+        - generic [ref=e177]: 注意事項
+      - list [ref=e178]:
+        - listitem [ref=e179]:
+          - text: •
+          - generic [ref=e181]:
+            - strong [ref=e182]: 自備設備：
+            - text: 請務必攜帶筆記型電腦，跟著講者一起實作
+        - listitem [ref=e183]:
+          - text: •
+          - generic [ref=e185]:
+            - strong [ref=e186]: 現場設備：
+            - text: 提供電源插座與免費 WiFi，讓你的設備電力滿滿
+        - listitem [ref=e187]:
+          - text: •
+          - generic [ref=e189]:
+            - strong [ref=e190]: 座位安排：
+            - text: 共 70 席，採「先到先入座」制，建議提早報到
+        - listitem [ref=e191]:
+          - text: •
+          - generic [ref=e193]:
+            - strong [ref=e194]: Claude 訂閱方案：
+            - text: Claude Cowork 須至少 Pro 以上方案
+  - generic [ref=e196]:
+    - heading "活動特色 | Event Highlights" [level=2] [ref=e197]:
+      - generic [ref=e199]: 活動特色 | Event Highlights
+    - paragraph [ref=e200]:
+      - generic [ref=e202]: 為什麼這場 Workshop 值得期待
+    - generic [ref=e203]:
+      - generic [ref=e204]:
+        - generic [ref=e205]:
+          - img "Clawd holding a lightbulb"
+        - heading "手把手實作" [level=3] [ref=e206]:
+          - generic [ref=e208]: 手把手實作
+        - paragraph [ref=e209]:
+          - generic [ref=e211]: 從 Claude Desktop 基礎到實用案例，跟著 Claude Ambassador 一步步上手
+      - generic [ref=e212]:
+        - generic [ref=e213]:
+          - img "Clawd as a detective"
+        - heading "業界實戰分享" [level=3] [ref=e214]:
+          - generic [ref=e216]: 業界實戰分享
+        - paragraph [ref=e217]:
+          - generic [ref=e219]: 四位實戰派講者分享 Claude 在不同領域的應用案例與避坑經驗
+      - generic [ref=e220]:
+        - generic [ref=e221]:
+          - img "Happy Clawd"
+        - heading "適合新手友善" [level=3] [ref=e222]:
+          - generic [ref=e224]: 適合新手友善
+        - paragraph [ref=e225]:
+          - generic [ref=e227]: 無論你是 AI 新手或職場專業人士，都能找到適合自己的學習切入點
+      - generic [ref=e228]:
+        - generic [ref=e229]:
+          - img "Clawd with a heart"
+        - heading "交流與 Networking" [level=3] [ref=e230]:
+          - generic [ref=e232]: 交流與 Networking
+        - paragraph [ref=e233]:
+          - generic [ref=e235]: 活動尾聲安排自由交流時間，認識志同道合的 Claude 使用者
+  - generic [ref=e238]:
+    - iframe [ref=e240]
+    - generic [ref=e241]:
+      - generic [ref=e242]: Venue
+      - heading "N24 台北方舟" [level=2] [ref=e243]:
+        - generic [ref=e245]: N24 台北方舟
+      - paragraph [ref=e246]:
+        - generic [ref=e248]: 台北市南港區市民大道六段 100 號
+      - paragraph [ref=e249]:
+        - img [ref=e250]
+        - generic [ref=e257]:
+          - text: 推薦搭乘捷運至板南線「
+          - strong [ref=e258]: 後山埤站
+          - text: 」，從
+          - strong [ref=e259]: 3 號出口
+          - text: 步行約 5–10 分鐘即可抵達
+      - link "在 Google Maps 中開啟" [ref=e260] [cursor=pointer]:
+        - /url: https://www.google.com/maps/search/?api=1&query=N24+%E5%8F%B0%E5%8C%97%E6%96%B9%E8%88%9F+%E5%8F%B0%E5%8C%97%E5%B8%82%E5%8D%97%E6%B8%AF%E5%8D%80%E5%B8%82%E6%B0%91%E5%A4%A7%E9%81%93%E5%85%AD%E6%AE%B5100%E8%99%9F
+        - generic [ref=e262]: 在 Google Maps 中開啟
+        - img [ref=e263]
+      - generic [ref=e267]:
+        - generic [ref=e270]: 南港區
+        - generic [ref=e273]: 市民大道六段
+  - generic [ref=e275]:
+    - heading "本場活動共同主辦單位" [level=2] [ref=e276]:
+      - generic [ref=e278]: 本場活動共同主辦單位
+    - generic [ref=e279]:
+      - generic [ref=e280]: Onboard
+      - generic [ref=e283]: FUTUREMODE 台灣未來祭
+      - generic [ref=e286]: 臺灣區塊鏈愛好者協會
+      - generic [ref=e289]: 給行銷人的AI小聚
+  - generic [ref=e291]:
+    - heading "Claude Community Taiwan 團隊" [level=2] [ref=e292]:
+      - generic [ref=e294]: Claude Community Taiwan 團隊
+    - paragraph [ref=e295]:
+      - generic [ref=e297]: 我們是一群因為 Claude 而相聚的台灣夥伴，喜歡分享、樂於學習。期待在活動現場與你相遇，一起把 AI 變成日常工作裡最好的隊友！
+    - generic [ref=e298]:
+      - img [ref=e299]
+      - generic [ref=e300]:
+        - generic [ref=e303]: 主辦人
+        - generic [ref=e304]: Justin
+        - generic [ref=e307]: Claude 官方社群大使
+      - generic [ref=e308]:
+        - link "Justin's Threads" [ref=e309] [cursor=pointer]:
+          - /url: https://www.threads.com/@debuguy.dev
+          - img [ref=e310]
+          - text: Threads
+        - link "Justin's LinkedIn" [ref=e314] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/jrting-shiau-77b0ab225/
+          - img [ref=e315]
+          - text: LinkedIn
+    - generic [ref=e318]:
+      - generic [ref=e319]:
+        - generic [ref=e322]: 協辦夥伴
+        - generic [ref=e323]: Leo
+        - generic [ref=e324]:
+          - link "leo.chiang@titansoft.com.sg" [ref=e325] [cursor=pointer]:
+            - /url: mailto:leo.chiang@titansoft.com.sg
+            - img [ref=e326]
+            - text: leo.chiang@titansoft.com.sg
+          - link "LinkedIn" [ref=e329] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/leo-chiang/
+            - img [ref=e330]
+            - text: LinkedIn
+      - generic [ref=e332]:
+        - generic [ref=e335]: 協辦夥伴
+        - generic [ref=e336]: Hana
+        - generic [ref=e337]:
+          - link "Threads" [ref=e338] [cursor=pointer]:
+            - /url: https://www.threads.com/@hanamizuki
+            - img [ref=e339]
+            - text: Threads
+          - link "X" [ref=e343] [cursor=pointer]:
+            - /url: https://x.com/hanamizuki
+            - img [ref=e344]
+            - text: X
+      - generic [ref=e346]:
+        - generic [ref=e349]: 協辦夥伴
+        - generic [ref=e350]: Cloudia
+        - generic [ref=e351]:
+          - link "Threads" [ref=e352] [cursor=pointer]:
+            - /url: https://www.threads.com/@cloudia.life
+            - img [ref=e353]
+            - text: Threads
+          - link "Instagram" [ref=e357] [cursor=pointer]:
+            - /url: https://www.instagram.com/cloudia.life/
+            - img [ref=e358]
+            - text: Instagram
+  - contentinfo [ref=e361]:
+    - generic [ref=e362]: In collaboration with
+    - img "Claude" [ref=e363]
