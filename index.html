@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Claude Community Taiwan</title>
-    <meta name="description" content="2026 年 5 月 9 日（六）@ N24 台北方舟｜入門教學 × 業界實戰分享，為 AI 新手與職場專業人士打開 Claude 協作的大門">
+    <title>Claude Code for Campus @ NTUT · Claude Community Taiwan</title>
+    <meta name="description" content="2026 年 6 月 5 日（五）@ 臺北科技大學 共同科館 B1 演講廳｜不用寫程式，用 Claude Code 打造你的 App — 專為學生與 Claude Code 新手設計的入門分享">
 
     <!-- Favicon -->
     <link rel="icon" href="/favicon.ico" sizes="any">
@@ -16,40 +16,61 @@
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://claude.tw/">
-    <meta property="og:title" content="Claude Cowork Workshop · Claude Community Taiwan">
-    <meta property="og:description" content="2026 年 5 月 9 日（六）@ N24 台北方舟｜入門教學 × 業界實戰分享，為 AI 新手與職場專業人士打開 Claude 協作的大門">
+    <meta property="og:title" content="Claude Code for Campus @ NTUT · Claude Community Taiwan">
+    <meta property="og:description" content="2026 年 6 月 5 日（五）@ 臺北科技大學 共同科館 B1 演講廳｜不用寫程式，用 Claude Code 打造你的 App，專為學生與新手設計的入門分享">
     <meta property="og:image" content="https://claude.tw/scr/assets/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Claude Cowork Workshop — Claude Community Taiwan">
+    <meta property="og:image:alt" content="Claude Code for Campus @ NTUT — Claude Community Taiwan">
     <meta property="og:locale" content="zh_TW">
     <meta property="og:site_name" content="Claude Community Taiwan">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Claude Cowork Workshop · Claude Community Taiwan">
-    <meta name="twitter:description" content="2026 年 5 月 9 日（六）@ N24 台北方舟｜入門教學 × 業界實戰分享">
+    <meta name="twitter:title" content="Claude Code for Campus @ NTUT · Claude Community Taiwan">
+    <meta name="twitter:description" content="2026 年 6 月 5 日（五）@ 臺北科技大學 共同科館 B1 演講廳｜不用寫程式，用 Claude Code 打造你的 App">
     <meta name="twitter:image" content="https://claude.tw/scr/assets/og-image.png">
-    <meta name="twitter:image:alt" content="Claude Cowork Workshop — Claude Community Taiwan">
+    <meta name="twitter:image:alt" content="Claude Code for Campus @ NTUT — Claude Community Taiwan">
 
     <!-- Theme color (mobile browser UI tint) -->
-    <meta name="theme-color" content="#F5F0EB">
+    <meta name="theme-color" content="#faf9f5">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --color-bg-dark: #F5F0EB;
-            --color-bg-section: #EDE7E0;
-            --color-bg-card: #FFFFFF;
-            --color-text-primary: #1A1612;
-            --color-text-secondary: #6B5E54;
-            --color-text-muted: #9B8E83;
-            --color-accent: #C96442;
-            --color-accent-hover: #B5522F;
-            --color-border: #DDD5CC;
-            --color-success: #2E7D4F;
+            /* Official Anthropic brand palette — do not add colors outside this set */
+            --color-dark: #141413;
+            --color-mid-gray: #b0aea5;
+            --color-light-gray: #e8e6dc;
+            --color-light: #faf9f5;
+            --color-accent-orange: #d97757;
+            --color-accent-blue: #6a9bcc;
+            --color-accent-green: #788c5d;
+
+            /* Semantic aliases (brand tokens only) */
+            --color-bg-dark: var(--color-light);
+            --color-bg-section: var(--color-light-gray);
+            --color-bg-card: var(--color-light);
+            --color-text-primary: var(--color-dark);
+            /* readable secondary body text — darker than mid-gray for contrast on light/section backgrounds */
+            --color-text-secondary: color-mix(in srgb, var(--color-dark) 68%, var(--color-light));
+            --color-text-muted: var(--color-mid-gray);
+            --color-accent: var(--color-accent-orange);
+            --color-border: var(--color-light-gray);
+            --color-success: var(--color-accent-green);
+
+            /* Tints — color-mix from brand hues only */
+            --color-light-92: color-mix(in srgb, var(--color-light) 92%, var(--color-light-gray));
+            --color-orange-25: color-mix(in srgb, var(--color-accent-orange) 25%, var(--color-light));
+            --color-orange-20: color-mix(in srgb, var(--color-accent-orange) 20%, var(--color-light));
+            --color-orange-10: color-mix(in srgb, var(--color-accent-orange) 10%, var(--color-light));
+            --color-orange-8: color-mix(in srgb, var(--color-accent-orange) 8%, var(--color-light));
+            --color-orange-6: color-mix(in srgb, var(--color-accent-orange) 6%, var(--color-light));
+            --color-orange-5: color-mix(in srgb, var(--color-accent-orange) 5%, var(--color-light));
+            --color-orange-12: color-mix(in srgb, var(--color-accent-orange) 12%, var(--color-light));
+            --color-dark-8: color-mix(in srgb, var(--color-dark) 8%, var(--color-light));
             --font-family: 'Outfit', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
             --font-display: 'Outfit', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
             --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -89,7 +110,7 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            background: rgba(245, 240, 235, 0.92);
+            background: var(--color-light-92);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--color-border);
             padding: 1rem 2rem;
@@ -192,8 +213,8 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle at 30% 20%, rgba(201, 100, 66, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 70% 80%, rgba(201, 100, 66, 0.06) 0%, transparent 50%);
+            background: radial-gradient(circle at 30% 20%, var(--color-orange-10) 0%, var(--color-light) 50%),
+                        radial-gradient(circle at 70% 80%, var(--color-orange-6) 0%, var(--color-light) 50%);
             animation: pulse 8s ease-in-out infinite;
         }
 
@@ -210,14 +231,14 @@
 
         .hero-badge {
             display: inline-block;
-            background: rgba(201, 100, 66, 0.1);
+            background: var(--color-orange-10);
             color: var(--color-accent);
             padding: 0.5rem 1rem;
             border-radius: 100px;
             font-size: 0.85rem;
             font-weight: 500;
             margin-bottom: 2rem;
-            border: 1px solid rgba(201, 100, 66, 0.25);
+            border: 1px solid var(--color-orange-25);
         }
 
         .hero h1 {
@@ -230,10 +251,7 @@
         }
 
         .hero h1 .highlight {
-            background: linear-gradient(135deg, var(--color-accent), #D4845A);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--color-accent);
         }
 
         .hero-subtitle {
@@ -293,24 +311,25 @@
 
         .btn-primary {
             background: var(--color-accent);
-            color: white;
+            color: var(--color-light);
         }
 
         .btn-primary:hover {
-            background: var(--color-accent-hover);
+            background: var(--color-dark);
+            color: var(--color-light);
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(201, 100, 66, 0.25);
+            box-shadow: 0 10px 30px var(--color-orange-25);
         }
 
         .btn-secondary {
-            background: transparent;
+            background: var(--color-light);
             color: var(--color-text-primary);
             border: 1px solid var(--color-border);
         }
 
         .btn-secondary:hover {
-            border-color: var(--color-text-secondary);
-            background: rgba(201, 100, 66, 0.05);
+            border-color: var(--color-mid-gray);
+            background: var(--color-orange-5);
         }
 
         /* Sections — only top padding so adjacent sections share single 4rem gap */
@@ -370,7 +389,7 @@
         }
 
         .schedule-item:hover {
-            border-color: rgba(201, 100, 66, 0.25);
+            border-color: var(--color-orange-25);
             transform: translateX(4px);
         }
 
@@ -414,7 +433,7 @@
         }
 
         .feature-card:hover {
-            border-color: rgba(201, 100, 66, 0.25);
+            border-color: var(--color-orange-25);
             transform: translateY(-4px);
         }
 
@@ -450,7 +469,7 @@
             height: auto;
             z-index: 1;
             pointer-events: none;
-            filter: drop-shadow(0 8px 16px rgba(26, 22, 18, 0.08));
+            filter: drop-shadow(0 8px 16px var(--color-dark-8));
             transform: rotate(var(--rotate));
         }
 
@@ -635,7 +654,7 @@
         }
 
         .venue-feature {
-            background: rgba(201, 100, 66, 0.08);
+            background: var(--color-orange-8);
             color: var(--color-accent);
             padding: 0.5rem 1rem;
             border-radius: 100px;
@@ -747,7 +766,7 @@
             border-color: var(--color-accent);
             color: var(--color-accent);
             transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(201, 100, 66, 0.12);
+            box-shadow: 0 6px 16px var(--color-orange-12);
         }
 
         .contact-btn svg {
@@ -780,7 +799,7 @@
             overflow-y: hidden;
             -webkit-overflow-scrolling: touch;
             scrollbar-width: thin;
-            scrollbar-color: var(--color-border) transparent;
+            scrollbar-color: var(--color-border) var(--color-light);
             padding: 0.5rem 0 1rem;
             scroll-snap-type: x proximity;
         }
@@ -790,7 +809,7 @@
         }
 
         .co-organizers-wrap::-webkit-scrollbar-track {
-            background: transparent;
+            background: var(--color-light);
         }
 
         .co-organizers-wrap::-webkit-scrollbar-thumb {
@@ -1043,8 +1062,8 @@
         }
 
         .lang-note {
-            background: rgba(201, 100, 66, 0.08);
-            border: 1px solid rgba(201, 100, 66, 0.2);
+            background: var(--color-orange-8);
+            border: 1px solid var(--color-orange-20);
             border-radius: 12px;
             padding: 1.25rem 1.5rem;
             margin-bottom: 2rem;
@@ -1073,7 +1092,7 @@
         }
 
         .agenda-table th {
-            background: rgba(201, 100, 66, 0.08);
+            background: var(--color-orange-8);
             font-weight: 600;
             font-size: 0.85rem;
             text-transform: uppercase;
@@ -1237,6 +1256,53 @@
                 width: auto;
             }
         }
+
+        /* Past Events */
+        .past-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-2);
+            margin-top: var(--space-3);
+        }
+
+        @media (max-width: 600px) {
+            .past-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .past-card {
+            background: var(--color-bg-card);
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: var(--transition-smooth);
+        }
+
+        .past-card:hover {
+            border-color: var(--color-orange-25);
+            transform: translateY(-4px);
+        }
+
+        .past-card .past-date {
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.85rem;
+            color: var(--color-accent);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .past-card .past-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .past-card .past-meta {
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+        }
     </style>
 </head>
 <body class="lang-zh">
@@ -1266,6 +1332,12 @@
                         <span class="en">Venue</span>
                     </span>
                 </a></li>
+                <li><a href="#past-events">
+                    <span class="bilingual">
+                        <span class="zh">歷史活動</span>
+                        <span class="en">Past Events</span>
+                    </span>
+                </a></li>
                 <li><a href="#contact">
                     <span class="bilingual">
                         <span class="zh">聯絡</span>
@@ -1284,14 +1356,14 @@
         <div class="hero-content">
             <h1>
                 <span class="bilingual">
-                    <span class="zh"><span class="highlight">Claude Cowork Workshop</span></span>
-                    <span class="en"><span class="highlight">Claude Cowork Workshop</span></span>
+                    <span class="zh"><span class="highlight">Claude Code</span> for Campus @ NTUT</span>
+                    <span class="en"><span class="highlight">Claude Code</span> for Campus @ NTUT</span>
                 </span>
             </h1>
             <p class="hero-subtitle">
                 <span class="bilingual">
-                    <span class="zh">2026 年 5 月 9 日（週六） @ <a href="https://www.google.com/maps/search/?api=1&amp;query=N24+%E5%8F%B0%E5%8C%97%E6%96%B9%E8%88%9F+%E5%8F%B0%E5%8C%97%E5%B8%82%E5%8D%97%E6%B8%AF%E5%8D%80%E5%B8%82%E6%B0%91%E5%A4%A7%E9%81%93%E5%85%AD%E6%AE%B5100%E8%99%9F" target="_blank" style="color:var(--color-accent);text-decoration:none;">N24 台北方舟</a><br>入門教學 × 業界實戰分享，<br>為 AI 新手與職場專業人士打開 Claude 協作的大門</span>
-                    <span class="en">May 9, 2026 (Saturday) @ <a href="https://www.google.com/maps/search/?api=1&amp;query=N24+%E5%8F%B0%E5%8C%97%E6%96%B9%E8%88%9F+%E5%8F%B0%E5%8C%97%E5%B8%82%E5%8D%97%E6%B8%AF%E5%8D%80%E5%B8%82%E6%B0%91%E5%A4%A7%E9%81%93%E5%85%AD%E6%AE%B5100%E8%99%9F" target="_blank" style="color:var(--color-accent);text-decoration:none;">N24 Taipei Ark</a><br>Hands-on workshop × industry panel for both AI beginners and professionals</span>
+                    <span class="zh">2026 年 6 月 5 日（週五） @ <a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%87%BA%E5%8C%97%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%B8%20%E5%85%B1%E5%90%8C%E7%A7%91%E9%A4%A8" target="_blank" style="color:var(--color-accent);text-decoration:none;">臺北科技大學 共同科館 B1 演講廳</a><br>不用寫程式，用 Claude Code 打造你的 App，<br>專為學生與 Claude Code 新手設計的入門分享</span>
+                    <span class="en">June 5, 2026 (Friday) @ <a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%87%BA%E5%8C%97%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%B8%20%E5%85%B1%E5%90%8C%E7%A7%91%E9%A4%A8" target="_blank" style="color:var(--color-accent);text-decoration:none;">NTUT · Lecture Hall, B1</a><br>Build your own app with Claude Code — no coding required,<br>in a beginner-friendly sharing session for students and newcomers</span>
                 </span>
             </p>
             <div class="hero-meta">
@@ -1304,8 +1376,8 @@
                     </div>
                     <div class="value">
                         <span class="bilingual">
-                            <span class="zh">2026 年 5 月 9 日（週六）</span>
-                            <span class="en">May 9, 2026 (Sat)</span>
+                            <span class="zh">2026 年 6 月 5 日（週五）</span>
+                            <span class="en">June 5, 2026 (Fri)</span>
                         </span>
                     </div>
                 </div>
@@ -1318,8 +1390,8 @@
                     </div>
                     <div class="value">
                         <span class="bilingual">
-                            <span class="zh">13:30 報到・14:00 開始</span>
-                            <span class="en">Check-in 13:30 · Starts 14:00</span>
+                            <span class="zh">09:00 報到・09:30 開始</span>
+                            <span class="en">Check-in 09:00 · Starts 09:30</span>
                         </span>
                     </div>
                 </div>
@@ -1332,8 +1404,8 @@
                     </div>
                     <div class="value">
                         <span class="bilingual">
-                            <span class="zh">70 席（先到先入座）</span>
-                            <span class="en">70 seats (first-come, first-served)</span>
+                            <span class="zh">150 席・審核制</span>
+                            <span class="en">150 seats · by approval</span>
                         </span>
                     </div>
                 </div>
@@ -1348,7 +1420,7 @@
                 </div>
             </div>
             <div class="cta-buttons">
-                <a href="https://luma.com/purwya66" target="_blank" class="btn btn-primary">
+                <a href="https://luma.com/m7jb98oi?tk=RZyFiD" target="_blank" class="btn btn-primary">
                     <span class="bilingual">
                         <span class="zh">立即報名</span>
                         <span class="en">Register Now</span>
@@ -1362,7 +1434,7 @@
     <section id="agenda">
         <!-- Language Note (EN only) -->
         <div class="lang-note" style="display:none;" id="lang-note-en">
-            <strong>🌐 Language Note:</strong> This event is conducted primarily in Traditional Chinese. If you're not fluent in Chinese, you might find it challenging to follow the discussions and full experience. We recommend participants have a comfortable understanding of Traditional Chinese to get the most out of this workshop.
+            <strong>🌐 Language Note:</strong> This event is conducted primarily in Traditional Chinese. If you're not fluent in Chinese, you might find it challenging to follow the discussions and full experience. We recommend participants have a comfortable understanding of Traditional Chinese to get the most out of the talks, demos, and conversations at this event.
         </div>
 
         <!-- Agenda Table -->
@@ -1375,8 +1447,8 @@
             </h2>
             <p>
                 <span class="bilingual">
-                    <span class="zh">從 Claude Desktop 基礎操作開始，一步步掌握 AI 協作技巧；接著由業界專家分享如何把 Claude 落實到日常與商業挑戰中。</span>
-                    <span class="en">Start with Claude Desktop fundamentals and master AI collaboration step by step, then learn from industry experts how Claude solves real-world daily and business challenges.</span>
+                    <span class="zh">一個早上，從零開始用自然語言把腦中的點子變成可運作的 App。先看 Hana 現場用 Claude Code 打造應用，再透過 Lightning Talks 聽其他參與者的實作分享。</span>
+                    <span class="en">In one morning, turn your idea into a working app using natural language. Watch Hana build live with Claude Code, then hear other participants' hands-on shares in the Lightning Talks.</span>
                 </span>
             </p>
             <table class="agenda-table">
@@ -1398,7 +1470,7 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="time-col">13:30 - 14:00</td>
+                        <td class="time-col">09:00 - 09:30</td>
                         <td>
                             <span class="bilingual">
                                 <span class="zh">報到入場 (Check-in)</span>
@@ -1407,38 +1479,38 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="time-col">14:00 - 14:10</td>
+                        <td class="time-col">09:30 - 09:40</td>
                         <td>
                             <span class="bilingual">
-                                <span class="zh">Opening</span>
-                                <span class="en">Opening</span>
+                                <span class="zh">開幕致詞 (Opening)</span>
+                                <span class="en">Opening Remarks</span>
                             </span>
                         </td>
                     </tr>
                     <tr>
-                        <td class="time-col">14:10 - 16:00</td>
+                        <td class="time-col">09:40 - 10:40</td>
                         <td>
                             <span class="bilingual">
-                                <span class="zh"><strong>Workshop：Claude Cowork for Beginner</strong>　—　Justin<br><span style="color:var(--color-text-muted);font-size:0.9em;">Claude Cowork 入門教學、實用應用案例分享</span></span>
-                                <span class="en"><strong>Workshop: Claude Cowork for Beginner</strong> — Justin<br><span style="color:var(--color-text-muted);font-size:0.9em;">Introductory tutorial and practical use-case sharing</span></span>
+                                <span class="zh"><strong>主題演講 + Demo</strong>　—　Hana<br><span style="color:var(--color-text-muted);font-size:0.9em;">現場用 Claude Code 從零打造 App，全程不寫程式</span></span>
+                                <span class="en"><strong>Keynote + Live Demo</strong> — Hana<br><span style="color:var(--color-text-muted);font-size:0.9em;">Build an app from scratch with Claude Code, no coding required</span></span>
                             </span>
                         </td>
                     </tr>
                     <tr>
-                        <td class="time-col">16:00 - 17:00</td>
+                        <td class="time-col">10:40 - 11:40</td>
                         <td>
                             <span class="bilingual">
-                                <span class="zh"><strong>Panel：Claude 實戰經驗談</strong>　—　Justin、Hana、Konois、Dawson<br><span style="color:var(--color-text-muted);font-size:0.9em;">業界專家對談，分享 Claude 在各領域的實戰案例與避坑經驗</span></span>
-                                <span class="en"><strong>Panel: Claude in Practice</strong> — Justin, Hana, Konois, Dawson<br><span style="color:var(--color-text-muted);font-size:0.9em;">Industry experts share real-world applications and pitfalls to avoid</span></span>
+                                <span class="zh"><strong>Lightning Talks</strong><br><span style="color:var(--color-text-muted);font-size:0.9em;">聽參與者 3 分鐘實作分享，從真實案例中獲得靈感</span></span>
+                                <span class="en"><strong>Lightning Talks</strong><br><span style="color:var(--color-text-muted);font-size:0.9em;">3-minute participant shares — learn from real hands-on cases</span></span>
                             </span>
                         </td>
                     </tr>
                     <tr>
-                        <td class="time-col">17:00 - 17:30</td>
+                        <td class="time-col">11:40 - 12:00</td>
                         <td>
                             <span class="bilingual">
-                                <span class="zh">自由交流 Networking</span>
-                                <span class="en">Free Networking</span>
+                                <span class="zh">Q&amp;A + 互動遊戲</span>
+                                <span class="en">Q&amp;A + Interactive Close</span>
                             </span>
                         </td>
                     </tr>
@@ -1458,92 +1530,67 @@
             </h2>
             <p>
                 <span class="bilingual">
-                    <span class="zh">由 Claude 官方社群大使 Justin 主持入門 Workshop，並邀請業界四位實戰派講者分享 Claude 在各領域的應用心得。</span>
-                    <span class="en">Hosted by Claude Community Ambassador Justin for the beginner workshop, with four industry practitioners sharing Claude application experiences across different fields.</span>
+                    <span class="zh">由獎金獵人共同創辦人 Hana 擔任主題演講，現場用 Claude Code 從零打造 App；接著開放 Lightning Talks，讓參與者上台分享自己的實作。</span>
+                    <span class="en">Keynote by BountyHunter co-founder Hana, building an app live with Claude Code — followed by open Lightning Talks where participants share their own work.</span>
                 </span>
             </p>
 
             <div class="session-header">
-                <span class="session-time">14:10 - 16:00</span>
+                <span class="session-time">09:40 - 10:40</span>
                 <span class="session-name">
                     <span class="bilingual">
-                        <span class="zh">Workshop 主講</span>
-                        <span class="en">Workshop Host</span>
+                        <span class="zh">主題演講 + Demo</span>
+                        <span class="en">Keynote + Demo</span>
                     </span>
                 </span>
                 <span class="session-tag">
                     <span class="bilingual">
-                        <span class="zh">入門教學</span>
-                        <span class="en">Tutorial</span>
+                        <span class="zh">主講</span>
+                        <span class="en">Keynote</span>
                     </span>
                 </span>
             </div>
             <div class="speakers-grid speakers-grid-single">
                 <div class="speaker-card">
-                    <img class="speaker-clawd" src="scr/assets/clawd/clawd-cape.png" alt="" aria-hidden="true">
-                    <div class="speaker-name">Justin</div>
+                    <img class="speaker-clawd" src="scr/assets/clawd/clawd-kite.png" alt="" aria-hidden="true">
+                    <div class="speaker-name">Hana Chang 花水木</div>
                     <div class="speaker-role">
                         <span class="bilingual">
-                            <span class="zh">Claude Ambassador / 41.tech 共同創辦人</span>
-                            <span class="en">Claude Ambassador / Co-founder, 41.tech</span>
+                            <span class="zh">獎金獵人共同創辦人</span>
+                            <span class="en">Co-founder, BountyHunter</span>
                         </span>
                     </div>
                 </div>
             </div>
 
             <div class="session-header">
-                <span class="session-time">16:00 - 17:00</span>
+                <span class="session-time">10:40 - 11:40</span>
                 <span class="session-name">
                     <span class="bilingual">
-                        <span class="zh">Panel 對談</span>
-                        <span class="en">Panel Discussion</span>
+                        <span class="zh">Lightning Talks</span>
+                        <span class="en">Lightning Talks</span>
                     </span>
                 </span>
                 <span class="session-tag">
                     <span class="bilingual">
-                        <span class="zh">業界實戰</span>
-                        <span class="en">Practitioners</span>
+                        <span class="zh">公開徵集</span>
+                        <span class="en">Open Call</span>
                     </span>
                 </span>
             </div>
-            <div class="speakers-grid speakers-grid-quad">
-                <div class="speaker-card">
-                    <img class="speaker-clawd" src="scr/assets/clawd/clawd-cape.png" alt="" aria-hidden="true">
-                    <div class="speaker-name">Justin</div>
-                    <div class="speaker-role">
-                        <span class="bilingual">
-                            <span class="zh">Claude Ambassador / 41.tech 共同創辦人</span>
-                            <span class="en">Claude Ambassador / Co-founder, 41.tech</span>
-                        </span>
-                    </div>
-                </div>
-                <div class="speaker-card">
-                    <img class="speaker-clawd" src="scr/assets/clawd/clawd-kite.png" alt="" aria-hidden="true">
-                    <div class="speaker-name">Hana 花水木</div>
-                    <div class="speaker-role">
-                        <span class="bilingual">
-                            <span class="zh">獎金獵人平台 共同創辦人</span>
-                            <span class="en">Co-founder, BountyHunter Platform</span>
-                        </span>
-                    </div>
-                </div>
-                <div class="speaker-card">
-                    <img class="speaker-clawd" src="scr/assets/clawd/clawd-book.png" alt="" aria-hidden="true">
-                    <div class="speaker-name">Konois 謝綸</div>
-                    <div class="speaker-role">
-                        <span class="bilingual">
-                            <span class="zh">Aotter 電獺 共同創辦人</span>
-                            <span class="en">Co-founder, Aotter</span>
-                        </span>
-                    </div>
-                </div>
+            <div class="speakers-grid speakers-grid-single">
                 <div class="speaker-card">
                     <img class="speaker-clawd" src="scr/assets/clawd/clawd-coffee.png" alt="" aria-hidden="true">
-                    <div class="speaker-name">Dawson 王宇和</div>
+                    <div class="speaker-name">
+                        <span class="bilingual">
+                            <span class="zh">現場參與者</span>
+                            <span class="en">Participants</span>
+                        </span>
+                    </div>
                     <div class="speaker-role">
                         <span class="bilingual">
-                            <span class="zh">AI 增效師</span>
-                            <span class="en">AI Productivity Expert</span>
+                            <span class="zh">歡迎報名者上台，用 3 分鐘分享你的 Claude Code 作品與心得</span>
+                            <span class="en">Sign up to share your Claude Code project in a 3-minute talk</span>
                         </span>
                     </div>
                 </div>
@@ -1562,10 +1609,24 @@
             </h2>
             <p>
                 <span class="bilingual">
-                    <span class="zh">無論你是 <strong>AI 新手</strong>，還是想提升工作效率的 <strong>職場專業人士</strong>，這場活動都會為你打開 Claude 協作的全新視野。我們會從最基礎的 Claude Desktop 操作開始，帶你一步步掌握 AI 協作技巧，再由業界重量級講者分享實戰案例。</span>
-                    <span class="en">Whether you're an <strong>AI beginner</strong> or a <strong>seasoned professional</strong> looking to boost productivity, this event will open up a whole new way of working with Claude. We'll start with the basics of Claude Desktop and guide you step by step into AI collaboration, followed by leading industry speakers sharing real-world use cases.</span>
+                    <span class="zh">這是一場專為 <strong>學生與 Claude Code 新手</strong> 設計的入門分享。你會先看到講者現場示範如何用自然語言打造 App，再透過 Lightning Talks 聽見參與者的真實實作與心得。不必懂語法，也能輕鬆理解 Claude Code 的玩法與可能性。</span>
+                    <span class="en">A beginner-friendly sharing session for <strong>students and Claude Code newcomers</strong>. You'll watch a live demo of building an app with natural language, then hear real participant projects and takeaways in the Lightning Talks. No syntax required — just come curious and see what's possible with Claude Code.</span>
                 </span>
             </p>
+
+            <h4>
+                <span class="bilingual">
+                    <span class="zh">你會學到什麼</span>
+                    <span class="en">What You'll Learn</span>
+                </span>
+            </h4>
+            <ul>
+                <li><span class="bilingual"><span class="zh">現場用 Claude Code 從零建立 App，全程不寫程式</span><span class="en">Build an app from scratch with Claude Code — no coding required</span></span></li>
+                <li><span class="bilingual"><span class="zh">AI 溝通技巧：規劃、迭代與 Prompt 心法</span><span class="en">AI collaboration: planning, iteration, and prompting techniques</span></span></li>
+                <li><span class="bilingual"><span class="zh">認識 AI 開發工具：Skills、MCP、Agents 的差異</span><span class="en">AI dev tools: the difference between Skills, MCP, and Agents</span></span></li>
+                <li><span class="bilingual"><span class="zh">App 開發專用 Skills 介紹</span><span class="en">A walkthrough of Skills built for app development</span></span></li>
+                <li><span class="bilingual"><span class="zh">Lightning Talk：聽其他人分享實作經驗，從真實案例中獲得靈感</span><span class="en">Lightning Talks: hear others' hands-on shares and get inspired</span></span></li>
+            </ul>
 
             <hr class="agenda-divider">
 
@@ -1580,26 +1641,20 @@
                 <ul>
                     <li>
                         <span class="bilingual">
-                            <span class="zh"><strong>自備設備：</strong>請務必攜帶筆記型電腦，跟著講者一起實作</span>
-                            <span class="en"><strong>Bring Your Own Device:</strong> Please bring a laptop to follow along with the workshop</span>
+                            <span class="zh"><strong>無需自備電腦：</strong>本場以現場示範與分享為主，輕鬆聆聽、參與即可</span>
+                            <span class="en"><strong>No Laptop Needed:</strong> This session centers on live demos and sharing — just come and enjoy</span>
                         </span>
                     </li>
                     <li>
                         <span class="bilingual">
-                            <span class="zh"><strong>現場設備：</strong>提供電源插座與免費 WiFi，讓你的設備電力滿滿</span>
-                            <span class="en"><strong>On-site:</strong> Power outlets and free WiFi provided</span>
+                            <span class="zh"><strong>無需事前準備：</strong>沒接觸過 Claude Code 也沒關係，跟著現場節奏就能上手</span>
+                            <span class="en"><strong>No Prep Required:</strong> New to Claude Code? No problem — just follow along on the day</span>
                         </span>
                     </li>
                     <li>
                         <span class="bilingual">
-                            <span class="zh"><strong>座位安排：</strong>共 70 席，採「先到先入座」制，建議提早報到</span>
-                            <span class="en"><strong>Seating:</strong> 70 seats total, first-come first-served — early check-in recommended</span>
-                        </span>
-                    </li>
-                    <li>
-                        <span class="bilingual">
-                            <span class="zh"><strong>Claude 訂閱方案：</strong>Claude Cowork 須至少 Pro 以上方案</span>
-                            <span class="en"><strong>Claude Subscription:</strong> Claude Cowork requires Pro plan or above</span>
+                            <span class="zh"><strong>名額與報名：</strong>共 150 席，採審核制報名，優先錄取北科大學生</span>
+                            <span class="en"><strong>Capacity & RSVP:</strong> 150 seats, by approval — NTUT students prioritized</span>
                         </span>
                     </li>
                 </ul>
@@ -1618,8 +1673,8 @@
             </h2>
             <p>
                 <span class="bilingual">
-                    <span class="zh">為什麼這場 Workshop 值得期待</span>
-                    <span class="en">Why this workshop is worth attending</span>
+                    <span class="zh">為什麼這場分享值得期待</span>
+                    <span class="en">Why this sharing session is worth attending</span>
                 </span>
             </p>
             <div class="features-grid">
@@ -1627,14 +1682,14 @@
                 <div class="feature-icon"><img src="scr/assets/clawd/clawd-lightbulb.png" alt="Clawd holding a lightbulb" loading="lazy"></div>
                 <h3>
                     <span class="bilingual">
-                        <span class="zh">手把手實作</span>
-                        <span class="en">Hands-on Workshop</span>
+                        <span class="zh">不用寫程式打造 App</span>
+                        <span class="en">Build Without Coding</span>
                     </span>
                 </h3>
                 <p>
                     <span class="bilingual">
-                        <span class="zh">從 Claude Desktop 基礎到實用案例，跟著 Claude Ambassador 一步步上手</span>
-                        <span class="en">Step-by-step from Claude Desktop basics to practical use cases, guided by a Claude Ambassador</span>
+                        <span class="zh">用自然語言描述需求，Claude Code 就能幫你把點子變成可運作的應用</span>
+                        <span class="en">Describe what you want in plain language and let Claude Code turn it into a working app</span>
                     </span>
                 </p>
             </div>
@@ -1642,14 +1697,14 @@
                 <div class="feature-icon"><img src="scr/assets/clawd/clawd-magnifier.png" alt="Clawd as a detective" loading="lazy"></div>
                 <h3>
                     <span class="bilingual">
-                        <span class="zh">業界實戰分享</span>
-                        <span class="en">Industry Practitioner Panel</span>
+                        <span class="zh">Lightning Talks 互相學習</span>
+                        <span class="en">Learn from Lightning Talks</span>
                     </span>
                 </h3>
                 <p>
                     <span class="bilingual">
-                        <span class="zh">四位實戰派講者分享 Claude 在不同領域的應用案例與避坑經驗</span>
-                        <span class="en">Four practitioners share Claude's real-world applications and pitfalls to avoid</span>
+                        <span class="zh">聽其他參與者 3 分鐘實作分享，從真實案例中互相學習、獲得靈感</span>
+                        <span class="en">Hear 3-minute participant shares and get inspired by real hands-on cases</span>
                     </span>
                 </p>
             </div>
@@ -1657,14 +1712,14 @@
                 <div class="feature-icon"><img src="scr/assets/clawd/clawd-happy.png" alt="Happy Clawd" loading="lazy"></div>
                 <h3>
                     <span class="bilingual">
-                        <span class="zh">適合新手友善</span>
-                        <span class="en">Beginner-Friendly</span>
+                        <span class="zh">學生與新手友善</span>
+                        <span class="en">Student & Beginner Friendly</span>
                     </span>
                 </h3>
                 <p>
                     <span class="bilingual">
-                        <span class="zh">無論你是 AI 新手或職場專業人士，都能找到適合自己的學習切入點</span>
-                        <span class="en">Whether you're new to AI or a seasoned professional, you'll find a fitting entry point</span>
+                        <span class="zh">零程式基礎也能上手，特別適合想踏入 AI 開發的學生與新手</span>
+                        <span class="en">No coding background needed — perfect for students stepping into AI development</span>
                     </span>
                 </p>
             </div>
@@ -1672,14 +1727,14 @@
                 <div class="feature-icon"><img src="scr/assets/clawd/clawd-heart.png" alt="Clawd with a heart" loading="lazy"></div>
                 <h3>
                     <span class="bilingual">
-                        <span class="zh">交流與 Networking</span>
-                        <span class="en">Networking Opportunity</span>
+                        <span class="zh">報名好禮</span>
+                        <span class="en">Attendee Perks</span>
                     </span>
                 </h3>
                 <p>
                     <span class="bilingual">
-                        <span class="zh">活動尾聲安排自由交流時間，認識志同道合的 Claude 使用者</span>
-                        <span class="en">Free networking time at the end to connect with fellow Claude users</span>
+                        <span class="zh">完成報名即贈官方貼紙與演講簡報，把當天的學習帶回家</span>
+                        <span class="en">Register to receive official stickers and the talk slides to take home</span>
                     </span>
                 </p>
             </div>
@@ -1693,7 +1748,7 @@
         <div class="venue-content">
             <div class="venue-map">
                 <iframe
-                    src="https://maps.google.com/maps?q=N24+%E5%8F%B0%E5%8C%97%E6%96%B9%E8%88%9F+%E5%8F%B0%E5%8C%97%E5%B8%82%E5%8D%97%E6%B8%AF%E5%8D%80%E5%B8%82%E6%B0%91%E5%A4%A7%E9%81%93%E5%85%AD%E6%AE%B5100%E8%99%9F&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                    src="https://maps.google.com/maps?q=%E8%87%BA%E5%8C%97%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%B8%20%E5%85%B1%E5%90%8C%E7%A7%91%E9%A4%A8&t=&z=16&ie=UTF8&iwloc=&output=embed"
                     allowfullscreen=""
                     loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade">
@@ -1703,24 +1758,24 @@
                 <div class="venue-label">Venue</div>
                 <h2 class="venue-title">
                     <span class="bilingual">
-                        <span class="zh">N24 台北方舟</span>
-                        <span class="en">N24 Taipei Ark</span>
+                        <span class="zh">臺北科技大學 共同科館 B1 演講廳</span>
+                        <span class="en">NTUT · Lecture Hall, Common Building B1</span>
                     </span>
                 </h2>
                 <p class="venue-address">
                     <span class="bilingual">
-                        <span class="zh">台北市南港區市民大道六段 100 號</span>
-                        <span class="en">No. 100, Sec. 6, Civic Blvd., Nangang Dist., Taipei City</span>
+                        <span class="zh">台北市大安區忠孝東路三段 1 號</span>
+                        <span class="en">No. 1, Sec. 3, Zhongxiao E. Rd., Da'an Dist., Taipei City</span>
                     </span>
                 </p>
                 <p class="venue-transit">
                     <svg class="transit-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="16" rx="2"/><path d="M4 11h16"/><path d="M12 3v8"/><circle cx="8" cy="15" r="1"/><circle cx="16" cy="15" r="1"/><path d="M8 19l-2 3"/><path d="M16 19l2 3"/></svg>
                     <span class="bilingual">
-                        <span class="zh">推薦搭乘捷運至板南線「<strong>後山埤站</strong>」，從 <strong>3 號出口</strong>步行約 5–10 分鐘即可抵達</span>
-                        <span class="en">Take MRT Bannan Line to <strong>Houshanpi Station</strong>, then walk 5–10 minutes from <strong>Exit 3</strong></span>
+                        <span class="zh">搭乘捷運至「<strong>忠孝新生站</strong>」，從 <strong>4 號出口</strong>步行約 3–5 分鐘即可抵達</span>
+                        <span class="en">Take MRT to <strong>Zhongxiao Xinsheng Station</strong>, then walk 3–5 minutes from <strong>Exit 4</strong></span>
                     </span>
                 </p>
-                <a href="https://www.google.com/maps/search/?api=1&amp;query=N24+%E5%8F%B0%E5%8C%97%E6%96%B9%E8%88%9F+%E5%8F%B0%E5%8C%97%E5%B8%82%E5%8D%97%E6%B8%AF%E5%8D%80%E5%B8%82%E6%B0%91%E5%A4%A7%E9%81%93%E5%85%AD%E6%AE%B5100%E8%99%9F" target="_blank" class="btn btn-secondary">
+                <a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%87%BA%E5%8C%97%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%B8%20%E5%85%B1%E5%90%8C%E7%A7%91%E9%A4%A8" target="_blank" class="btn btn-secondary">
                     <span class="bilingual">
                         <span class="zh">在 Google Maps 中開啟</span>
                         <span class="en">Open in Google Maps</span>
@@ -1730,14 +1785,14 @@
                 <div class="venue-features">
                     <span class="venue-feature">
                         <span class="bilingual">
-                            <span class="zh">南港區</span>
-                            <span class="en">Nangang District</span>
+                            <span class="zh">大安區</span>
+                            <span class="en">Da'an District</span>
                         </span>
                     </span>
                     <span class="venue-feature">
                         <span class="bilingual">
-                            <span class="zh">市民大道六段</span>
-                            <span class="en">Civic Blvd. Sec. 6</span>
+                            <span class="zh">共同科館 B1</span>
+                            <span class="en">Common Building B1</span>
                         </span>
                     </span>
                 </div>
@@ -1746,34 +1801,61 @@
         </div>
     </section>
 
-    <!-- Event Co-hosts Section -->
+    <!-- Co-organizer Section -->
     <section id="cohosts">
         <div class="agenda-section">
             <h2>
                 <span class="bilingual">
-                    <span class="zh">本場活動共同主辦單位</span>
-                    <span class="en">Event Co-organizing Partners</span>
+                    <span class="zh">共同主辦單位</span>
+                    <span class="en">Co-organizer</span>
                 </span>
             </h2>
-            <div class="cohosts-grid">
-                <div class="cohost-card">Onboard</div>
+            <div class="cohosts-grid" style="grid-template-columns: minmax(240px, 360px); justify-content: center;">
                 <div class="cohost-card">
                     <span class="bilingual">
-                        <span class="zh">FUTUREMODE 台灣未來祭</span>
-                        <span class="en">FUTUREMODE — Taiwan Future Festival</span>
+                        <span class="zh">獎金獵人 BountyHunter</span>
+                        <span class="en">BountyHunter</span>
                     </span>
                 </div>
-                <div class="cohost-card">
-                    <span class="bilingual">
-                        <span class="zh">臺灣區塊鏈愛好者協會</span>
-                        <span class="en">Taiwan Blockchain Enthusiasts Association</span>
-                    </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Past Events Section -->
+    <section id="past-events">
+        <div class="agenda-section">
+            <h2>
+                <span class="bilingual">
+                    <span class="zh">歷史活動</span>
+                    <span class="en">Past Events</span>
+                </span>
+            </h2>
+            <p>
+                <span class="bilingual">
+                    <span class="zh">Claude Community Taiwan 一路走來舉辦過的活動回顧。</span>
+                    <span class="en">A look back at the events Claude Community Taiwan has hosted.</span>
+                </span>
+            </p>
+            <div class="past-grid">
+                <div class="past-card">
+                    <div class="past-date">2026.05.09</div>
+                    <h3 class="past-title">Claude Cowork Workshop</h3>
+                    <p class="past-meta">
+                        <span class="bilingual">
+                            <span class="zh">N24 台北方舟・入門教學 × 業界實戰分享，Justin 主講 Workshop 與四人實戰 Panel。</span>
+                            <span class="en">N24 Taipei Ark · A beginner workshop plus a four-speaker industry panel, hosted by Justin.</span>
+                        </span>
+                    </p>
                 </div>
-                <div class="cohost-card">
-                    <span class="bilingual">
-                        <span class="zh">給行銷人的AI小聚</span>
-                        <span class="en">AI for Marketers Meetup</span>
-                    </span>
+                <div class="past-card">
+                    <div class="past-date">2026.04.09</div>
+                    <h3 class="past-title">Claude Meetup Taipei</h3>
+                    <p class="past-meta">
+                        <span class="bilingual">
+                            <span class="zh">可能存在的遊樂園 CollaPlay・社群首聚，分享 Claude 使用經驗與交流。</span>
+                            <span class="en">CollaPlay, Taipei · The community's first meetup — sharing Claude experiences and networking.</span>
+                        </span>
+                    </p>
                 </div>
             </div>
         </div>
