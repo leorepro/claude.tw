@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Claude Code for Campus @ NTUT · Claude Community Taiwan</title>
-    <meta name="description" content="2026 年 6 月 5 日（五）@ 臺北科技大學 共同科館 B1 演講廳｜不用寫程式，用 Claude Code 打造你的 App — 專為學生與 Claude Code 新手設計的入門分享">
+    <title>Code with Claude Workshop @ 台北 · Claude Community Taiwan</title>
+    <meta name="description" content="2026 年 7 月 4 日（六）@ 兆基文教大樓 10 樓｜看 Anthropic 工程師如何使用 Claude Code — 為有 Claude Code 基礎的開發者打造的實戰 Workshop">
 
     <!-- Favicon -->
     <link rel="icon" href="/favicon.ico" sizes="any">
@@ -16,21 +16,21 @@
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://claude.tw/">
-    <meta property="og:title" content="Claude Code for Campus @ NTUT · Claude Community Taiwan">
-    <meta property="og:description" content="2026 年 6 月 5 日（五）@ 臺北科技大學 共同科館 B1 演講廳｜不用寫程式，用 Claude Code 打造你的 App，專為學生與新手設計的入門分享">
+    <meta property="og:title" content="Code with Claude Workshop @ 台北 · Claude Community Taiwan">
+    <meta property="og:description" content="2026 年 7 月 4 日（六）@ 兆基文教大樓 10 樓｜看 Anthropic 工程師如何使用 Claude Code，為有 Claude Code 基礎的開發者打造的實戰 Workshop">
     <meta property="og:image" content="https://claude.tw/scr/assets/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Claude Code for Campus @ NTUT — Claude Community Taiwan">
+    <meta property="og:image:alt" content="Code with Claude Workshop @ 台北 — Claude Community Taiwan">
     <meta property="og:locale" content="zh_TW">
     <meta property="og:site_name" content="Claude Community Taiwan">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Claude Code for Campus @ NTUT · Claude Community Taiwan">
-    <meta name="twitter:description" content="2026 年 6 月 5 日（五）@ 臺北科技大學 共同科館 B1 演講廳｜不用寫程式，用 Claude Code 打造你的 App">
+    <meta name="twitter:title" content="Code with Claude Workshop @ 台北 · Claude Community Taiwan">
+    <meta name="twitter:description" content="2026 年 7 月 4 日（六）@ 兆基文教大樓 10 樓｜看 Anthropic 工程師如何使用 Claude Code，為開發者打造的實戰 Workshop">
     <meta name="twitter:image" content="https://claude.tw/scr/assets/og-image.png">
-    <meta name="twitter:image:alt" content="Claude Code for Campus @ NTUT — Claude Community Taiwan">
+    <meta name="twitter:image:alt" content="Code with Claude Workshop @ 台北 — Claude Community Taiwan">
 
     <!-- Theme color (mobile browser UI tint) -->
     <meta name="theme-color" content="#faf9f5">
@@ -795,36 +795,14 @@
         /* Co-organizers */
         .co-organizers-wrap {
             margin-top: var(--space-3);
-            overflow-x: auto;
-            overflow-y: hidden;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: thin;
-            scrollbar-color: var(--color-border) var(--color-light);
             padding: 0.5rem 0 1rem;
-            scroll-snap-type: x proximity;
-        }
-
-        .co-organizers-wrap::-webkit-scrollbar {
-            height: 6px;
-        }
-
-        .co-organizers-wrap::-webkit-scrollbar-track {
-            background: var(--color-light);
-        }
-
-        .co-organizers-wrap::-webkit-scrollbar-thumb {
-            background: var(--color-border);
-            border-radius: 3px;
-        }
-
-        .co-organizers-wrap::-webkit-scrollbar-thumb:hover {
-            background: var(--color-text-muted);
         }
 
         .co-organizers-grid {
             display: grid;
-            grid-template-columns: repeat(4, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
             gap: 1rem;
+            justify-content: center;
         }
 
         .co-organizer-card {
@@ -833,7 +811,6 @@
             border-radius: 16px;
             padding: 1.25rem 1.5rem;
             text-align: center;
-            scroll-snap-align: start;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -873,6 +850,142 @@
             padding: 0.2rem 0;
         }
 
+        /* Clickable avatar cards */
+        .cohost-avatar {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 8px rgba(20, 20, 19, 0.12));
+            margin-bottom: 0.1rem;
+        }
+
+        .co-organizer-card {
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+
+        .co-organizer-card:hover,
+        .co-organizer-card:focus-visible {
+            transform: translateY(-4px);
+            border-color: var(--color-accent);
+            box-shadow: 0 10px 24px rgba(20, 20, 19, 0.1);
+            outline: none;
+        }
+
+        /* Member modal */
+        .member-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+
+        .member-modal[hidden] {
+            display: none;
+        }
+
+        .member-modal-backdrop {
+            position: absolute;
+            inset: 0;
+            background: rgba(20, 20, 19, 0.55);
+        }
+
+        .member-modal-card {
+            position: relative;
+            background: var(--color-bg-card);
+            border: 1px solid var(--color-border);
+            border-radius: 20px;
+            padding: 2.25rem 2rem 1.75rem;
+            width: min(360px, 100%);
+            text-align: center;
+            box-shadow: 0 24px 60px rgba(20, 20, 19, 0.28);
+            animation: memberModalPop 0.22s ease;
+        }
+
+        @keyframes memberModalPop {
+            from { opacity: 0; transform: translateY(12px) scale(0.96); }
+            to { opacity: 1; transform: none; }
+        }
+
+        .member-modal-close {
+            position: absolute;
+            top: 0.6rem;
+            right: 0.85rem;
+            background: none;
+            border: none;
+            font-size: 1.7rem;
+            line-height: 1;
+            color: var(--color-text-muted);
+            cursor: pointer;
+            padding: 0.2rem 0.4rem;
+        }
+
+        .member-modal-close:hover {
+            color: var(--color-text-primary);
+        }
+
+        .member-modal-avatar {
+            width: 96px;
+            height: 96px;
+            object-fit: contain;
+            filter: drop-shadow(0 8px 16px rgba(20, 20, 19, 0.18));
+        }
+
+        .member-modal-role {
+            margin-top: 0.5rem;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--color-text-muted);
+        }
+
+        .member-modal-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-text-primary);
+            margin: 0.15rem 0 1.1rem;
+        }
+
+        .member-modal-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            align-items: stretch;
+        }
+
+        .member-modal-links .links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .member-modal-links a {
+            color: var(--color-accent);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.6rem 0.8rem;
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            font-size: 0.92rem;
+            transition: background 0.15s ease, border-color 0.15s ease;
+        }
+
+        .member-modal-links a:hover {
+            border-color: var(--color-accent);
+            background: var(--color-light-gray);
+        }
+
+        .member-modal-empty {
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+        }
+
         .co-organizer-card .links a:hover {
             text-decoration: underline;
         }
@@ -880,41 +993,6 @@
         .co-organizer-card .links a svg {
             flex-shrink: 0;
             opacity: 0.85;
-        }
-
-        /* Event Co-hosts (this-event-only) */
-        .cohosts-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: var(--space-2);
-            margin-top: var(--space-3);
-        }
-
-        @media (max-width: 900px) {
-            .cohosts-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 500px) {
-            .cohosts-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .cohost-card {
-            background: var(--color-bg-card);
-            border: 1px solid var(--color-border);
-            border-radius: 12px;
-            padding: 1rem 1.25rem;
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--color-text-primary);
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 60px;
         }
 
         /* Footer */
@@ -1258,50 +1336,79 @@
         }
 
         /* Past Events */
-        .past-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: var(--space-2);
+        .past-list {
             margin-top: var(--space-3);
+            border-top: 1px solid rgba(20, 20, 19, 0.1);
         }
 
-        @media (max-width: 600px) {
-            .past-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .past-card {
-            background: var(--color-bg-card);
-            border: 1px solid var(--color-border);
-            border-radius: 16px;
-            padding: 1.5rem;
+        .past-item {
+            display: flex;
+            gap: 1.25rem;
+            align-items: center;
+            padding: 1rem;
+            border-bottom: 1px solid rgba(20, 20, 19, 0.1);
+            text-decoration: none;
+            color: inherit;
             transition: var(--transition-smooth);
         }
 
-        .past-card:hover {
-            border-color: var(--color-orange-25);
-            transform: translateY(-4px);
+        .past-item:hover {
+            background: var(--color-bg-card);
         }
 
-        .past-card .past-date {
+        .past-item:hover .past-title {
+            color: var(--color-accent);
+        }
+
+        .past-item .past-date {
+            flex: 0 0 auto;
+            min-width: 92px;
             font-family: 'SF Mono', Monaco, monospace;
             font-size: 0.85rem;
             color: var(--color-accent);
             font-weight: 600;
-            margin-bottom: 0.5rem;
         }
 
-        .past-card .past-title {
-            font-size: 1.15rem;
+        .past-item .past-body {
+            flex: 1 1 auto;
+            min-width: 0;
+        }
+
+        .past-item .past-title {
+            font-size: 1.1rem;
             font-weight: 700;
-            margin-bottom: 0.5rem;
+            margin: 0 0 0.25rem;
+            transition: color 0.2s ease;
         }
 
-        .past-card .past-meta {
+        .past-item .past-meta {
             font-size: 0.9rem;
             color: var(--color-text-secondary);
             line-height: 1.6;
+            margin: 0;
+        }
+
+        .past-item .past-arrow {
+            flex: 0 0 auto;
+            color: var(--color-text-muted);
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        .past-item:hover .past-arrow {
+            color: var(--color-accent);
+            transform: translateX(3px);
+        }
+
+        @media (max-width: 600px) {
+            .past-item {
+                align-items: flex-start;
+                flex-wrap: wrap;
+                gap: 0.35rem 1rem;
+            }
+
+            .past-item .past-arrow {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -1356,14 +1463,14 @@
         <div class="hero-content">
             <h1>
                 <span class="bilingual">
-                    <span class="zh"><span class="highlight">Claude Code</span> for Campus @ NTUT</span>
-                    <span class="en"><span class="highlight">Claude Code</span> for Campus @ NTUT</span>
+                    <span class="zh">Code with <span class="highlight">Claude</span> Workshop</span>
+                    <span class="en">Code with <span class="highlight">Claude</span> Workshop</span>
                 </span>
             </h1>
             <p class="hero-subtitle">
                 <span class="bilingual">
-                    <span class="zh">2026 年 6 月 5 日（週五） @ <a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%87%BA%E5%8C%97%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%B8%20%E5%85%B1%E5%90%8C%E7%A7%91%E9%A4%A8" target="_blank" style="color:var(--color-accent);text-decoration:none;">臺北科技大學 共同科館 B1 演講廳</a><br>不用寫程式，用 Claude Code 打造你的 App，<br>專為學生與 Claude Code 新手設計的入門分享</span>
-                    <span class="en">June 5, 2026 (Friday) @ <a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%87%BA%E5%8C%97%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%B8%20%E5%85%B1%E5%90%8C%E7%A7%91%E9%A4%A8" target="_blank" style="color:var(--color-accent);text-decoration:none;">NTUT · Lecture Hall, B1</a><br>Build your own app with Claude Code — no coding required,<br>in a beginner-friendly sharing session for students and newcomers</span>
+                    <span class="zh">2026 年 7 月 4 日（週六） @ <a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%85%86%E5%9F%BA%E6%96%87%E6%95%99%E5%A4%A7%E6%A8%93" target="_blank" style="color:var(--color-accent);text-decoration:none;">兆基文教大樓 10 樓</a><br>看 Anthropic 工程師如何使用 Claude Code，<br>為有 Claude Code 基礎的開發者打造的實戰 Workshop</span>
+                    <span class="en">July 4, 2026 (Saturday) @ <a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%85%86%E5%9F%BA%E6%96%87%E6%95%99%E5%A4%A7%E6%A8%93" target="_blank" style="color:var(--color-accent);text-decoration:none;">Zhaoji Building, 10F</a><br>See how Anthropic engineers use Claude Code —<br>a hands-on workshop for developers already building with Claude Code</span>
                 </span>
             </p>
             <div class="hero-meta">
@@ -1376,8 +1483,8 @@
                     </div>
                     <div class="value">
                         <span class="bilingual">
-                            <span class="zh">2026 年 6 月 5 日（週五）</span>
-                            <span class="en">June 5, 2026 (Fri)</span>
+                            <span class="zh">2026 年 7 月 4 日（週六）</span>
+                            <span class="en">July 4, 2026 (Sat)</span>
                         </span>
                     </div>
                 </div>
@@ -1390,8 +1497,8 @@
                     </div>
                     <div class="value">
                         <span class="bilingual">
-                            <span class="zh">09:00 報到・09:30 開始</span>
-                            <span class="en">Check-in 09:00 · Starts 09:30</span>
+                            <span class="zh">13:30 報到・14:00 開始</span>
+                            <span class="en">Check-in 13:30 · Starts 14:00</span>
                         </span>
                     </div>
                 </div>
@@ -1404,8 +1511,8 @@
                     </div>
                     <div class="value">
                         <span class="bilingual">
-                            <span class="zh">150 席・審核制</span>
-                            <span class="en">150 seats · by approval</span>
+                            <span class="zh">60 席・已額滿候補</span>
+                            <span class="en">60 seats · Full, waitlist</span>
                         </span>
                     </div>
                 </div>
@@ -1420,10 +1527,10 @@
                 </div>
             </div>
             <div class="cta-buttons">
-                <a href="https://luma.com/m7jb98oi?tk=RZyFiD" target="_blank" class="btn btn-primary">
+                <a href="https://luma.com/claude-u8gm" target="_blank" class="btn btn-primary">
                     <span class="bilingual">
-                        <span class="zh">立即報名</span>
-                        <span class="en">Register Now</span>
+                        <span class="zh">加入候補（已額滿）</span>
+                        <span class="en">Join Waitlist (Full)</span>
                     </span>
                 </a>
             </div>
@@ -1447,8 +1554,8 @@
             </h2>
             <p>
                 <span class="bilingual">
-                    <span class="zh">一個早上，從零開始用自然語言把腦中的點子變成可運作的 App。先看 Hana 現場用 Claude Code 打造應用，再透過 Lightning Talks 聽其他參與者的實作分享。</span>
-                    <span class="en">In one morning, turn your idea into a working app using natural language. Watch Hana build live with Claude Code, then hear other participants' hands-on shares in the Lightning Talks.</span>
+                    <span class="zh">一個下午，跟著走一輪 Anthropic 工程師是怎麼使用 Claude Code 的。先聽 Code with Claude Tokyo 的第一手心得，再進入實戰 Workshop「How we Claude Code」親手操作，最後留一小時自由交流。</span>
+                    <span class="en">An afternoon walking through how Anthropic engineers actually use Claude Code. Start with first-hand insights from Code with Claude Tokyo, get hands-on yourself in the "How we Claude Code" workshop, then wrap up with an hour of open networking.</span>
                 </span>
             </p>
             <table class="agenda-table">
@@ -1470,7 +1577,7 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="time-col">09:00 - 09:30</td>
+                        <td class="time-col">13:30 - 14:00</td>
                         <td>
                             <span class="bilingual">
                                 <span class="zh">報到入場 (Check-in)</span>
@@ -1479,38 +1586,47 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="time-col">09:30 - 09:40</td>
+                        <td class="time-col">14:00 - 14:10</td>
                         <td>
                             <span class="bilingual">
-                                <span class="zh">開幕致詞 (Opening)</span>
-                                <span class="en">Opening Remarks</span>
+                                <span class="zh">開場、場地介紹</span>
+                                <span class="en">Opening & Venue Introduction</span>
                             </span>
                         </td>
                     </tr>
                     <tr>
-                        <td class="time-col">09:40 - 10:40</td>
+                        <td class="time-col">14:10 - 14:50</td>
                         <td>
                             <span class="bilingual">
-                                <span class="zh"><strong>主題演講 + Demo</strong>　—　Hana<br><span style="color:var(--color-text-muted);font-size:0.9em;">現場用 Claude Code 從零打造 App，全程不寫程式</span></span>
-                                <span class="en"><strong>Keynote + Live Demo</strong> — Hana<br><span style="color:var(--color-text-muted);font-size:0.9em;">Build an app from scratch with Claude Code, no coding required</span></span>
+                                <span class="zh"><strong>Code with Claude Tokyo 心得分享</strong>　—　Justin<br><span style="color:var(--color-text-muted);font-size:0.9em;">親臨 Anthropic 官方活動的第一手體驗與最新開發技巧</span></span>
+                                <span class="en"><strong>Insights from Code with Claude Tokyo</strong> — Justin<br><span style="color:var(--color-text-muted);font-size:0.9em;">First-hand experience and the latest techniques from Anthropic's official event</span></span>
                             </span>
                         </td>
                     </tr>
                     <tr>
-                        <td class="time-col">10:40 - 11:40</td>
+                        <td class="time-col">14:50 - 15:00</td>
                         <td>
                             <span class="bilingual">
-                                <span class="zh"><strong>Lightning Talks</strong><br><span style="color:var(--color-text-muted);font-size:0.9em;">聽參與者 3 分鐘實作分享，從真實案例中獲得靈感</span></span>
-                                <span class="en"><strong>Lightning Talks</strong><br><span style="color:var(--color-text-muted);font-size:0.9em;">3-minute participant shares — learn from real hands-on cases</span></span>
+                                <span class="zh">Q & A</span>
+                                <span class="en">Q & A</span>
                             </span>
                         </td>
                     </tr>
                     <tr>
-                        <td class="time-col">11:40 - 12:00</td>
+                        <td class="time-col">15:00 - 16:30</td>
                         <td>
                             <span class="bilingual">
-                                <span class="zh">Q&amp;A + 互動遊戲</span>
-                                <span class="en">Q&amp;A + Interactive Close</span>
+                                <span class="zh"><strong>Workshop — How we Claude Code</strong><br><span style="color:var(--color-text-muted);font-size:0.9em;">大家親手操作的實戰 workshop，體驗工程師如何在真實場景中使用 Claude Code</span></span>
+                                <span class="en"><strong>Workshop — How we Claude Code</strong><br><span style="color:var(--color-text-muted);font-size:0.9em;">A hands-on workshop where everyone tries it — see how engineers use Claude Code in real scenarios</span></span>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">16:30 - 17:30</td>
+                        <td>
+                            <span class="bilingual">
+                                <span class="zh">交流時間 (Networking)</span>
+                                <span class="en">Networking & Discussion</span>
                             </span>
                         </td>
                     </tr>
@@ -1530,51 +1646,51 @@
             </h2>
             <p>
                 <span class="bilingual">
-                    <span class="zh">由獎金獵人共同創辦人 Hana 擔任主題演講，現場用 Claude Code 從零打造 App；接著開放 Lightning Talks，讓參與者上台分享自己的實作。</span>
-                    <span class="en">Keynote by BountyHunter co-founder Hana, building an app live with Claude Code — followed by open Lightning Talks where participants share their own work.</span>
+                    <span class="zh">由 Claude 官方社群大使 Justin 分享親臨 Code with Claude Tokyo 的第一手心得，並帶大家一起動手實戰 Workshop「How we Claude Code」。</span>
+                    <span class="en">Claude Community Ambassador Justin shares first-hand insights from Code with Claude Tokyo, then leads everyone through the hands-on "How we Claude Code" workshop.</span>
                 </span>
             </p>
 
             <div class="session-header">
-                <span class="session-time">09:40 - 10:40</span>
+                <span class="session-time">14:10 - 14:50</span>
                 <span class="session-name">
                     <span class="bilingual">
-                        <span class="zh">主題演講 + Demo</span>
-                        <span class="en">Keynote + Demo</span>
+                        <span class="zh">Code with Claude Tokyo 心得分享</span>
+                        <span class="en">Insights from Code with Claude Tokyo</span>
                     </span>
                 </span>
                 <span class="session-tag">
                     <span class="bilingual">
                         <span class="zh">主講</span>
-                        <span class="en">Keynote</span>
+                        <span class="en">Talk</span>
                     </span>
                 </span>
             </div>
             <div class="speakers-grid speakers-grid-single">
                 <div class="speaker-card">
-                    <img class="speaker-clawd" src="scr/assets/clawd/clawd-kite.png" alt="" aria-hidden="true">
-                    <div class="speaker-name">Hana Chang 花水木</div>
+                    <img class="speaker-clawd" src="scr/assets/clawd/clawd-cape.png" alt="" aria-hidden="true">
+                    <div class="speaker-name">Justin</div>
                     <div class="speaker-role">
                         <span class="bilingual">
-                            <span class="zh">獎金獵人共同創辦人</span>
-                            <span class="en">Co-founder, BountyHunter</span>
+                            <span class="zh">Claude 官方社群大使</span>
+                            <span class="en">Claude Community Ambassador</span>
                         </span>
                     </div>
                 </div>
             </div>
 
             <div class="session-header">
-                <span class="session-time">10:40 - 11:40</span>
+                <span class="session-time">15:00 - 16:30</span>
                 <span class="session-name">
                     <span class="bilingual">
-                        <span class="zh">Lightning Talks</span>
-                        <span class="en">Lightning Talks</span>
+                        <span class="zh">Workshop — How we Claude Code</span>
+                        <span class="en">Workshop — How we Claude Code</span>
                     </span>
                 </span>
                 <span class="session-tag">
                     <span class="bilingual">
-                        <span class="zh">公開徵集</span>
-                        <span class="en">Open Call</span>
+                        <span class="zh">實戰</span>
+                        <span class="en">Hands-on</span>
                     </span>
                 </span>
             </div>
@@ -1583,14 +1699,14 @@
                     <img class="speaker-clawd" src="scr/assets/clawd/clawd-coffee.png" alt="" aria-hidden="true">
                     <div class="speaker-name">
                         <span class="bilingual">
-                            <span class="zh">現場參與者</span>
-                            <span class="en">Participants</span>
+                            <span class="zh">大家一起實戰</span>
+                            <span class="en">Hands-on for Everyone</span>
                         </span>
                     </div>
                     <div class="speaker-role">
                         <span class="bilingual">
-                            <span class="zh">歡迎報名者上台，用 3 分鐘分享你的 Claude Code 作品與心得</span>
-                            <span class="en">Sign up to share your Claude Code project in a 3-minute talk</span>
+                            <span class="zh">跟著一起動手操作，把 Claude 開發的工程流程與最佳實踐帶回你的日常工作</span>
+                            <span class="en">Get hands-on yourself and bring Claude's engineering workflow and best practices back to your daily work</span>
                         </span>
                     </div>
                 </div>
@@ -1609,23 +1725,33 @@
             </h2>
             <p>
                 <span class="bilingual">
-                    <span class="zh">這是一場專為 <strong>學生與 Claude Code 新手</strong> 設計的入門分享。你會先看到講者現場示範如何用自然語言打造 App，再透過 Lightning Talks 聽見參與者的真實實作與心得。不必懂語法，也能輕鬆理解 Claude Code 的玩法與可能性。</span>
-                    <span class="en">A beginner-friendly sharing session for <strong>students and Claude Code newcomers</strong>. You'll watch a live demo of building an app with natural language, then hear real participant projects and takeaways in the Lightning Talks. No syntax required — just come curious and see what's possible with Claude Code.</span>
+                    <span class="zh">這場 workshop 會帶大家走一輪 <strong>Anthropic 工程師是怎麼使用 Claude Code 的</strong>。無論你是想精進技巧還是尋找最佳實踐，都能在這裡找到答案。適合 <strong>對 Claude Code 操作有基本認識、開發時會進行 code review</strong> 的開發者。</span>
+                    <span class="en">This workshop walks you through <strong>how Anthropic engineers use Claude Code</strong>. Whether you're refining your skills or hunting for best practices, you'll find answers here. Built for <strong>developers with basic Claude Code knowledge who perform code reviews</strong> when they build.</span>
                 </span>
             </p>
 
             <h4>
                 <span class="bilingual">
-                    <span class="zh">你會學到什麼</span>
-                    <span class="en">What You'll Learn</span>
+                    <span class="zh">這場活動適合</span>
+                    <span class="en">This Event Is Perfect For</span>
                 </span>
             </h4>
             <ul>
-                <li><span class="bilingual"><span class="zh">現場用 Claude Code 從零建立 App，全程不寫程式</span><span class="en">Build an app from scratch with Claude Code — no coding required</span></span></li>
-                <li><span class="bilingual"><span class="zh">AI 溝通技巧：規劃、迭代與 Prompt 心法</span><span class="en">AI collaboration: planning, iteration, and prompting techniques</span></span></li>
-                <li><span class="bilingual"><span class="zh">認識 AI 開發工具：Skills、MCP、Agents 的差異</span><span class="en">AI dev tools: the difference between Skills, MCP, and Agents</span></span></li>
-                <li><span class="bilingual"><span class="zh">App 開發專用 Skills 介紹</span><span class="en">A walkthrough of Skills built for app development</span></span></li>
-                <li><span class="bilingual"><span class="zh">Lightning Talk：聽其他人分享實作經驗，從真實案例中獲得靈感</span><span class="en">Lightning Talks: hear others' hands-on shares and get inspired</span></span></li>
+                <li><span class="bilingual"><span class="zh">對 Claude Code 的操作有基本認識的開發者</span><span class="en">Developers with basic knowledge of Claude Code</span></span></li>
+                <li><span class="bilingual"><span class="zh">用 Claude Code 做開發時會進行 code review 的人</span><span class="en">Engineers who perform code reviews when building with Claude Code</span></span></li>
+            </ul>
+
+            <h4>
+                <span class="bilingual">
+                    <span class="zh">你會帶走什麼</span>
+                    <span class="en">What You'll Take Away</span>
+                </span>
+            </h4>
+            <ul>
+                <li><span class="bilingual"><span class="zh">Anthropic 工程師在真實開發場景中使用 Claude Code 的工程流程</span><span class="en">How Anthropic engineers use Claude Code in real-world development</span></span></li>
+                <li><span class="bilingual"><span class="zh">Code with Claude Tokyo 的第一手心得與最新開發技巧</span><span class="en">First-hand insights and the latest techniques from Code with Claude Tokyo</span></span></li>
+                <li><span class="bilingual"><span class="zh">可帶回日常工作的 Claude 開發最佳實踐</span><span class="en">Claude development best practices you can bring back to daily work</span></span></li>
+                <li><span class="bilingual"><span class="zh">與其他開發者面對面交流的一小時</span><span class="en">An hour of face-to-face networking with fellow developers</span></span></li>
             </ul>
 
             <hr class="agenda-divider">
@@ -1641,20 +1767,20 @@
                 <ul>
                     <li>
                         <span class="bilingual">
-                            <span class="zh"><strong>無需自備電腦：</strong>本場以現場示範與分享為主，輕鬆聆聽、參與即可</span>
-                            <span class="en"><strong>No Laptop Needed:</strong> This session centers on live demos and sharing — just come and enjoy</span>
+                            <span class="zh"><strong>關於出席記錄：</strong>位置非常珍貴，我們會記錄出席。無故缺席會影響下次報名的篩選，但提前告知或有合理原因完全沒問題</span>
+                            <span class="en"><strong>Attendance Policy:</strong> Spots are limited, so we track attendance. No-shows may affect future selection — but advance notice or a legitimate reason is completely fine</span>
                         </span>
                     </li>
                     <li>
                         <span class="bilingual">
-                            <span class="zh"><strong>無需事前準備：</strong>沒接觸過 Claude Code 也沒關係，跟著現場節奏就能上手</span>
-                            <span class="en"><strong>No Prep Required:</strong> New to Claude Code? No problem — just follow along on the day</span>
+                            <span class="zh"><strong>無法參加請提前告知：</strong>如果不能來，請盡早通知或自行取消報名，把位置留給其他想來的朋友</span>
+                            <span class="en"><strong>Let Us Know Early:</strong> If you can't make it, tell us or cancel as soon as possible so the spot can go to someone else</span>
                         </span>
                     </li>
                     <li>
                         <span class="bilingual">
-                            <span class="zh"><strong>名額與報名：</strong>共 150 席，採審核制報名，優先錄取北科大學生</span>
-                            <span class="en"><strong>Capacity & RSVP:</strong> 150 seats, by approval — NTUT students prioritized</span>
+                            <span class="zh"><strong>記得帶水瓶：</strong>場地不可飲食，但設有飲水機；現場也提供 Claude 官方貼紙</span>
+                            <span class="en"><strong>Bring a Water Bottle:</strong> No food or drinks inside the venue, but water dispensers are available — plus official Claude stickers on site</span>
                         </span>
                     </li>
                 </ul>
@@ -1673,8 +1799,8 @@
             </h2>
             <p>
                 <span class="bilingual">
-                    <span class="zh">為什麼這場分享值得期待</span>
-                    <span class="en">Why this sharing session is worth attending</span>
+                    <span class="zh">為什麼這場 Workshop 值得期待</span>
+                    <span class="en">Why this workshop is worth attending</span>
                 </span>
             </p>
             <div class="features-grid">
@@ -1682,14 +1808,14 @@
                 <div class="feature-icon"><img src="scr/assets/clawd/clawd-lightbulb.png" alt="Clawd holding a lightbulb" loading="lazy"></div>
                 <h3>
                     <span class="bilingual">
-                        <span class="zh">不用寫程式打造 App</span>
-                        <span class="en">Build Without Coding</span>
+                        <span class="zh">How we Claude Code</span>
+                        <span class="en">How we Claude Code</span>
                     </span>
                 </h3>
                 <p>
                     <span class="bilingual">
-                        <span class="zh">用自然語言描述需求，Claude Code 就能幫你把點子變成可運作的應用</span>
-                        <span class="en">Describe what you want in plain language and let Claude Code turn it into a working app</span>
+                        <span class="zh">大家親手操作的實戰 workshop，體驗工程師如何在真實開發場景中使用 Claude Code</span>
+                        <span class="en">A hands-on workshop where everyone tries it — see how engineers use Claude Code in real-world scenarios</span>
                     </span>
                 </p>
             </div>
@@ -1697,14 +1823,14 @@
                 <div class="feature-icon"><img src="scr/assets/clawd/clawd-magnifier.png" alt="Clawd as a detective" loading="lazy"></div>
                 <h3>
                     <span class="bilingual">
-                        <span class="zh">Lightning Talks 互相學習</span>
-                        <span class="en">Learn from Lightning Talks</span>
+                        <span class="zh">Code with Claude Tokyo 心得</span>
+                        <span class="en">Insights from Tokyo</span>
                     </span>
                 </h3>
                 <p>
                     <span class="bilingual">
-                        <span class="zh">聽其他參與者 3 分鐘實作分享，從真實案例中互相學習、獲得靈感</span>
-                        <span class="en">Hear 3-minute participant shares and get inspired by real hands-on cases</span>
+                        <span class="zh">親臨 Anthropic 官方活動的第一手體驗、最新開發技巧與全球開發者交流的故事</span>
+                        <span class="en">First-hand experience from Anthropic's official event — the latest techniques and global developer stories</span>
                     </span>
                 </p>
             </div>
@@ -1712,14 +1838,14 @@
                 <div class="feature-icon"><img src="scr/assets/clawd/clawd-happy.png" alt="Happy Clawd" loading="lazy"></div>
                 <h3>
                     <span class="bilingual">
-                        <span class="zh">學生與新手友善</span>
-                        <span class="en">Student & Beginner Friendly</span>
+                        <span class="zh">開發者面對面交流</span>
+                        <span class="en">Developer Networking</span>
                     </span>
                 </h3>
                 <p>
                     <span class="bilingual">
-                        <span class="zh">零程式基礎也能上手，特別適合想踏入 AI 開發的學生與新手</span>
-                        <span class="en">No coding background needed — perfect for students stepping into AI development</span>
+                        <span class="zh">會後一小時自由交流，分享你的 Claude Code 經驗、挑戰與創意應用，認識志同道合的夥伴</span>
+                        <span class="en">An hour to swap Claude Code experiences, challenges, and creative use cases with like-minded engineers</span>
                     </span>
                 </p>
             </div>
@@ -1727,14 +1853,14 @@
                 <div class="feature-icon"><img src="scr/assets/clawd/clawd-heart.png" alt="Clawd with a heart" loading="lazy"></div>
                 <h3>
                     <span class="bilingual">
-                        <span class="zh">報名好禮</span>
-                        <span class="en">Attendee Perks</span>
+                        <span class="zh">Claude 官方貼紙</span>
+                        <span class="en">Official Claude Stickers</span>
                     </span>
                 </h3>
                 <p>
                     <span class="bilingual">
-                        <span class="zh">完成報名即贈官方貼紙與演講簡報，把當天的學習帶回家</span>
-                        <span class="en">Register to receive official stickers and the talk slides to take home</span>
+                        <span class="zh">現場提供 Claude 官方貼紙；場地不可飲食，但有飲水機，記得帶水瓶</span>
+                        <span class="en">Official Claude stickers on site — and water dispensers available, so bring a reusable bottle</span>
                     </span>
                 </p>
             </div>
@@ -1748,7 +1874,7 @@
         <div class="venue-content">
             <div class="venue-map">
                 <iframe
-                    src="https://maps.google.com/maps?q=%E8%87%BA%E5%8C%97%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%B8%20%E5%85%B1%E5%90%8C%E7%A7%91%E9%A4%A8&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                    src="https://maps.google.com/maps?q=%E5%85%86%E5%9F%BA%E6%96%87%E6%95%99%E5%A4%A7%E6%A8%93&t=&z=16&ie=UTF8&iwloc=&output=embed"
                     allowfullscreen=""
                     loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade">
@@ -1758,24 +1884,24 @@
                 <div class="venue-label">Venue</div>
                 <h2 class="venue-title">
                     <span class="bilingual">
-                        <span class="zh">臺北科技大學 共同科館 B1 演講廳</span>
-                        <span class="en">NTUT · Lecture Hall, Common Building B1</span>
+                        <span class="zh">兆基文教大樓 10 樓</span>
+                        <span class="en">Zhaoji Building, 10F</span>
                     </span>
                 </h2>
                 <p class="venue-address">
                     <span class="bilingual">
-                        <span class="zh">台北市大安區忠孝東路三段 1 號</span>
-                        <span class="en">No. 1, Sec. 3, Zhongxiao E. Rd., Da'an Dist., Taipei City</span>
+                        <span class="zh">台北市松山區南京東路四段 120 巷 11 號</span>
+                        <span class="en">No. 11, Ln. 120, Sec. 4, Nanjing E. Rd., Songshan Dist., Taipei City</span>
                     </span>
                 </p>
                 <p class="venue-transit">
                     <svg class="transit-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="16" rx="2"/><path d="M4 11h16"/><path d="M12 3v8"/><circle cx="8" cy="15" r="1"/><circle cx="16" cy="15" r="1"/><path d="M8 19l-2 3"/><path d="M16 19l2 3"/></svg>
                     <span class="bilingual">
-                        <span class="zh">搭乘捷運至「<strong>忠孝新生站</strong>」，從 <strong>4 號出口</strong>步行約 3–5 分鐘即可抵達</span>
-                        <span class="en">Take MRT to <strong>Zhongxiao Xinsheng Station</strong>, then walk 3–5 minutes from <strong>Exit 4</strong></span>
+                        <span class="zh">捷運「<strong>台北小巨蛋站</strong>」<strong>4 號出口</strong>步行約 4 分鐘（約 300 公尺）；公車「<strong>南京寧安街口</strong>」站約 100 公尺</span>
+                        <span class="en">MRT <strong>Taipei Arena Station</strong>, <strong>Exit 4</strong> — about a 4-minute walk (~300 m); bus stop <strong>Nanjing-Ning'an St.</strong> is ~100 m away</span>
                     </span>
                 </p>
-                <a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%87%BA%E5%8C%97%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%B8%20%E5%85%B1%E5%90%8C%E7%A7%91%E9%A4%A8" target="_blank" class="btn btn-secondary">
+                <a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%85%86%E5%9F%BA%E6%96%87%E6%95%99%E5%A4%A7%E6%A8%93" target="_blank" class="btn btn-secondary">
                     <span class="bilingual">
                         <span class="zh">在 Google Maps 中開啟</span>
                         <span class="en">Open in Google Maps</span>
@@ -1785,39 +1911,19 @@
                 <div class="venue-features">
                     <span class="venue-feature">
                         <span class="bilingual">
-                            <span class="zh">大安區</span>
-                            <span class="en">Da'an District</span>
+                            <span class="zh">松山區</span>
+                            <span class="en">Songshan District</span>
                         </span>
                     </span>
                     <span class="venue-feature">
                         <span class="bilingual">
-                            <span class="zh">共同科館 B1</span>
-                            <span class="en">Common Building B1</span>
+                            <span class="zh">近小巨蛋站</span>
+                            <span class="en">Near Taipei Arena</span>
                         </span>
                     </span>
                 </div>
             </div>
         </div>
-        </div>
-    </section>
-
-    <!-- Co-organizer Section -->
-    <section id="cohosts">
-        <div class="agenda-section">
-            <h2>
-                <span class="bilingual">
-                    <span class="zh">共同主辦單位</span>
-                    <span class="en">Co-organizer</span>
-                </span>
-            </h2>
-            <div class="cohosts-grid" style="grid-template-columns: minmax(240px, 360px); justify-content: center;">
-                <div class="cohost-card">
-                    <span class="bilingual">
-                        <span class="zh">獎金獵人 BountyHunter</span>
-                        <span class="en">BountyHunter</span>
-                    </span>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -1836,27 +1942,46 @@
                     <span class="en">A look back at the events Claude Community Taiwan has hosted.</span>
                 </span>
             </p>
-            <div class="past-grid">
-                <div class="past-card">
+            <div class="past-list">
+                <a class="past-item" href="https://luma.com/m7jb98oi" target="_blank" rel="noopener">
+                    <div class="past-date">2026.06.05</div>
+                    <div class="past-body">
+                        <h3 class="past-title">Claude Code for Campus @ NTUT</h3>
+                        <p class="past-meta">
+                            <span class="bilingual">
+                                <span class="zh">臺北科技大學 共同科館 B1・不用寫程式用 Claude Code 打造 App，Hana 現場 Demo 與 Lightning Talks，學生與新手入門場。</span>
+                                <span class="en">NTUT · Common Building B1 — a no-code "build an app with Claude Code" session for students and newcomers, with Hana's live demo and Lightning Talks.</span>
+                            </span>
+                        </p>
+                    </div>
+                    <svg class="past-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+                </a>
+                <a class="past-item" href="https://luma.com/purwya66" target="_blank" rel="noopener">
                     <div class="past-date">2026.05.09</div>
-                    <h3 class="past-title">Claude Cowork Workshop</h3>
-                    <p class="past-meta">
-                        <span class="bilingual">
-                            <span class="zh">N24 台北方舟・入門教學 × 業界實戰分享，Justin 主講 Workshop 與四人實戰 Panel。</span>
-                            <span class="en">N24 Taipei Ark · A beginner workshop plus a four-speaker industry panel, hosted by Justin.</span>
-                        </span>
-                    </p>
-                </div>
-                <div class="past-card">
+                    <div class="past-body">
+                        <h3 class="past-title">Claude Cowork Workshop</h3>
+                        <p class="past-meta">
+                            <span class="bilingual">
+                                <span class="zh">N24 台北方舟・入門教學 × 業界實戰分享，Justin 主講 Workshop 與四人實戰 Panel。</span>
+                                <span class="en">N24 Taipei Ark · A beginner workshop plus a four-speaker industry panel, hosted by Justin.</span>
+                            </span>
+                        </p>
+                    </div>
+                    <svg class="past-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+                </a>
+                <a class="past-item" href="https://luma.com/2ux70uqz" target="_blank" rel="noopener">
                     <div class="past-date">2026.04.09</div>
-                    <h3 class="past-title">Claude Meetup Taipei</h3>
-                    <p class="past-meta">
-                        <span class="bilingual">
-                            <span class="zh">可能存在的遊樂園 CollaPlay・社群首聚，分享 Claude 使用經驗與交流。</span>
-                            <span class="en">CollaPlay, Taipei · The community's first meetup — sharing Claude experiences and networking.</span>
-                        </span>
-                    </p>
-                </div>
+                    <div class="past-body">
+                        <h3 class="past-title">Claude Meetup Taipei</h3>
+                        <p class="past-meta">
+                            <span class="bilingual">
+                                <span class="zh">可能存在的遊樂園 CollaPlay・社群首聚，分享 Claude 使用經驗與交流。</span>
+                                <span class="en">CollaPlay, Taipei · The community's first meetup — sharing Claude experiences and networking.</span>
+                            </span>
+                        </p>
+                    </div>
+                    <svg class="past-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+                </a>
             </div>
         </div>
     </section>
@@ -1907,82 +2032,107 @@
 
             <div class="co-organizers-wrap">
             <div class="co-organizers-grid">
-                <div class="co-organizer-card">
-                    <div class="label">
-                        <span class="bilingual">
-                            <span class="zh">協辦夥伴</span>
-                            <span class="en">Co-organizer</span>
-                        </span>
-                    </div>
+                <div class="co-organizer-card" tabindex="0" role="button" aria-haspopup="dialog">
+                    <img class="cohost-avatar" src="scr/assets/clawd/clawd-coffee.png" alt="" aria-hidden="true">
                     <div class="name">Leo</div>
-                    <div class="links">
-                        <a href="mailto:leo.chiang@titansoft.com.sg">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
-                            leo.chiang@titansoft.com.sg
-                        </a>
-                        <a href="https://www.linkedin.com/in/leo-chiang/" target="_blank">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                            LinkedIn
-                        </a>
+                    <div class="member-details" hidden>
+                        <div class="links">
+                            <a href="mailto:leo.chiang@titansoft.com.sg">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+                                leo.chiang@titansoft.com.sg
+                            </a>
+                            <a href="https://www.linkedin.com/in/leo-chiang/" target="_blank">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                LinkedIn
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="co-organizer-card">
-                    <div class="label">
-                        <span class="bilingual">
-                            <span class="zh">協辦夥伴</span>
-                            <span class="en">Co-organizer</span>
-                        </span>
-                    </div>
+                <div class="co-organizer-card" tabindex="0" role="button" aria-haspopup="dialog">
+                    <img class="cohost-avatar" src="scr/assets/clawd/clawd-kite.png" alt="" aria-hidden="true">
                     <div class="name">Hana</div>
-                    <div class="links">
-                        <a href="https://www.threads.com/@hanamizuki" target="_blank">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M16 12a4 4 0 0 0-4-4"/><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10c0-3.728-2.04-6.98-5.063-8.7"/></svg>
-                            Threads
-                        </a>
-                        <a href="https://x.com/hanamizuki" target="_blank">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                            X
-                        </a>
+                    <div class="member-details" hidden>
+                        <div class="links">
+                            <a href="https://www.threads.com/@hanamizuki" target="_blank">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M16 12a4 4 0 0 0-4-4"/><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10c0-3.728-2.04-6.98-5.063-8.7"/></svg>
+                                Threads
+                            </a>
+                            <a href="https://x.com/hanamizuki" target="_blank">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                                X
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="co-organizer-card">
-                    <div class="label">
-                        <span class="bilingual">
-                            <span class="zh">協辦夥伴</span>
-                            <span class="en">Co-organizer</span>
-                        </span>
-                    </div>
+                <div class="co-organizer-card" tabindex="0" role="button" aria-haspopup="dialog">
+                    <img class="cohost-avatar" src="scr/assets/clawd/clawd-heart.png" alt="" aria-hidden="true">
                     <div class="name">Cloudia</div>
-                    <div class="links">
-                        <a href="https://www.threads.com/@cloudia.life" target="_blank">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M16 12a4 4 0 0 0-4-4"/><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10c0-3.728-2.04-6.98-5.063-8.7"/></svg>
-                            Threads
-                        </a>
-                        <a href="https://www.instagram.com/cloudia.life/" target="_blank">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-                            Instagram
-                        </a>
+                    <div class="member-details" hidden>
+                        <div class="links">
+                            <a href="https://www.threads.com/@cloudia.life" target="_blank">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M16 12a4 4 0 0 0-4-4"/><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10c0-3.728-2.04-6.98-5.063-8.7"/></svg>
+                                Threads
+                            </a>
+                            <a href="https://www.instagram.com/cloudia.life/" target="_blank">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                                Instagram
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="co-organizer-card">
-                    <div class="label">
-                        <span class="bilingual">
-                            <span class="zh">協辦夥伴</span>
-                            <span class="en">Co-organizer</span>
-                        </span>
-                    </div>
+                <div class="co-organizer-card" tabindex="0" role="button" aria-haspopup="dialog">
+                    <img class="cohost-avatar" src="scr/assets/clawd/clawd-headphones.png" alt="" aria-hidden="true">
                     <div class="name">Paul</div>
-                    <div class="links">
-                        <a href="https://www.threads.com/@paul.ch.wu" target="_blank">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M16 12a4 4 0 0 0-4-4"/><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10c0-3.728-2.04-6.98-5.063-8.7"/></svg>
-                            Threads
-                        </a>
+                    <div class="member-details" hidden>
+                        <div class="links">
+                            <a href="https://www.threads.com/@paul.ch.wu" target="_blank">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M16 12a4 4 0 0 0-4-4"/><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10c0-3.728-2.04-6.98-5.063-8.7"/></svg>
+                                Threads
+                            </a>
+                        </div>
                     </div>
+                </div>
+                <div class="co-organizer-card" tabindex="0" role="button" aria-haspopup="dialog">
+                    <img class="cohost-avatar" src="scr/assets/clawd/clawd-book.png" alt="" aria-hidden="true">
+                    <div class="name">Anya</div>
+                </div>
+                <div class="co-organizer-card" tabindex="0" role="button" aria-haspopup="dialog">
+                    <img class="cohost-avatar" src="scr/assets/clawd/clawd-happy.png" alt="" aria-hidden="true">
+                    <div class="name">Gobby</div>
+                </div>
+                <div class="co-organizer-card" tabindex="0" role="button" aria-haspopup="dialog">
+                    <img class="cohost-avatar" src="scr/assets/clawd/clawd-lightbulb.png" alt="" aria-hidden="true">
+                    <div class="name">Michael</div>
+                </div>
+                <div class="co-organizer-card" tabindex="0" role="button" aria-haspopup="dialog">
+                    <img class="cohost-avatar" src="scr/assets/clawd/clawd-magnifier.png" alt="" aria-hidden="true">
+                    <div class="name">Nico</div>
+                </div>
+                <div class="co-organizer-card" tabindex="0" role="button" aria-haspopup="dialog">
+                    <img class="cohost-avatar" src="scr/assets/clawd/clawd-wand.png" alt="" aria-hidden="true">
+                    <div class="name">Sunny</div>
                 </div>
             </div>
             </div>
         </div>
     </section>
+
+    <!-- Member Modal -->
+    <div class="member-modal" id="memberModal" hidden>
+        <div class="member-modal-backdrop" data-close></div>
+        <div class="member-modal-card" role="dialog" aria-modal="true" aria-labelledby="memberModalName">
+            <button class="member-modal-close" type="button" aria-label="關閉 Close" data-close>&times;</button>
+            <img class="member-modal-avatar" src="" alt="" aria-hidden="true">
+            <div class="member-modal-role">
+                <span class="bilingual">
+                    <span class="zh">協辦夥伴</span>
+                    <span class="en">Co-organizer</span>
+                </span>
+            </div>
+            <div class="member-modal-name" id="memberModalName"></div>
+            <div class="member-modal-links"></div>
+        </div>
+    </div>
 
     <footer>
         <span class="footer-collab-label">In collaboration with</span>
@@ -2003,6 +2153,56 @@
                 if (langNote) langNote.style.display = 'none';
             }
         }
+
+        // Member modal — open full info when an avatar card is clicked
+        (function () {
+            const modal = document.getElementById('memberModal');
+            if (!modal) return;
+            const modalAvatar = modal.querySelector('.member-modal-avatar');
+            const modalName = modal.querySelector('.member-modal-name');
+            const modalLinks = modal.querySelector('.member-modal-links');
+            const closeBtn = modal.querySelector('.member-modal-close');
+            let lastFocused = null;
+
+            function openModal(card) {
+                const avatar = card.querySelector('.cohost-avatar');
+                const name = card.querySelector('.name');
+                modalAvatar.src = avatar ? avatar.getAttribute('src') : '';
+                modalName.textContent = name ? name.textContent : '';
+                const links = card.querySelector('.member-details .links');
+                modalLinks.innerHTML = '';
+                if (links && links.children.length) {
+                    modalLinks.appendChild(links.cloneNode(true));
+                } else {
+                    modalLinks.innerHTML = '<p class="member-modal-empty"><span class="bilingual"><span class="zh">暫無公開連結</span><span class="en">No public links yet</span></span></p>';
+                }
+                lastFocused = document.activeElement;
+                modal.hidden = false;
+                document.body.style.overflow = 'hidden';
+                closeBtn.focus();
+            }
+
+            function closeModal() {
+                modal.hidden = true;
+                document.body.style.overflow = '';
+                if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+            }
+
+            document.querySelectorAll('.co-organizer-card').forEach(card => {
+                card.addEventListener('click', () => openModal(card));
+                card.addEventListener('keydown', e => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openModal(card);
+                    }
+                });
+            });
+
+            modal.querySelectorAll('[data-close]').forEach(el => el.addEventListener('click', closeModal));
+            document.addEventListener('keydown', e => {
+                if (e.key === 'Escape' && !modal.hidden) closeModal();
+            });
+        })();
 
         // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
