@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skill Evals Workshop @ 台北 · Claude Community Taiwan</title>
-    <meta name="description" content="2026 年 8 月 6 日（四）@ AWS 台北辦公室 12 樓">
+    <title>近期活動 · Claude Community Taiwan</title>
+    <meta name="description" content="2026 年 9 月 20 日 Claude Code Build Day、9 月 26 日中秋節 Claude Meetup。加入 Claude Community Taiwan，與社群夥伴一起交流、動手創作。">
 
     <!-- Favicon -->
     <link rel="icon" href="/favicon.ico" sizes="any">
@@ -16,21 +16,21 @@
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://claude.tw/">
-    <meta property="og:title" content="Skill Evals Workshop @ 台北 · Claude Community Taiwan">
-    <meta property="og:description" content="2026 年 8 月 6 日（四）@ AWS 台北辦公室 12 樓">
-    <meta property="og:image" content="https://claude.tw/scr/assets/og-image.png">
+    <meta property="og:title" content="近期活動 · Claude Community Taiwan">
+    <meta property="og:description" content="9 月 20 日 Claude Code Build Day、9 月 26 日中秋節 Claude Meetup。歡迎加入台灣 Claude 社群活動。">
+    <meta property="og:image" content="https://claude.tw/scr/assets/og-september-events.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Skill Evals Workshop @ 台北 — Claude Community Taiwan">
+    <meta property="og:image:alt" content="Claude Community Taiwan">
     <meta property="og:locale" content="zh_TW">
     <meta property="og:site_name" content="Claude Community Taiwan">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Skill Evals Workshop @ 台北 · Claude Community Taiwan">
-    <meta name="twitter:description" content="2026 年 8 月 6 日（四）@ AWS 台北辦公室 12 樓">
-    <meta name="twitter:image" content="https://claude.tw/scr/assets/og-image.png">
-    <meta name="twitter:image:alt" content="Skill Evals Workshop @ 台北 — Claude Community Taiwan">
+    <meta name="twitter:title" content="近期活動 · Claude Community Taiwan">
+    <meta name="twitter:description" content="9 月 20 日 Claude Code Build Day、9 月 26 日中秋節 Claude Meetup。歡迎加入台灣 Claude 社群活動。">
+    <meta name="twitter:image" content="https://claude.tw/scr/assets/og-september-events.png">
+    <meta name="twitter:image:alt" content="Claude Community Taiwan">
 
     <!-- Theme color (mobile browser UI tint) -->
     <meta name="theme-color" content="#faf9f5">
@@ -83,6 +83,7 @@
             --space-5: 2.5rem;   /* 40px — panel padding / panel gap */
             --space-6: 3rem;     /* 48px — section-header bottom */
             --space-7: 4rem;     /* 64px — top-level section padding */
+            --section-max-width: 1200px;
         }
 
         * {
@@ -197,10 +198,11 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 6rem 2rem var(--space-7);
+            padding: 6rem var(--space-4) 0;
             background: linear-gradient(180deg, var(--color-bg-section) 0%, var(--color-bg-dark) 100%);
             position: relative;
-            overflow: hidden;
+            /* Clip the decoration without creating a nested scroll container. */
+            overflow: clip;
             max-width: none;
             width: 100%;
             margin: 0;
@@ -224,7 +226,8 @@
         }
 
         .hero-content {
-            max-width: 900px;
+            width: 100%;
+            max-width: calc(var(--section-max-width) - var(--space-4) - var(--space-4));
             position: relative;
             z-index: 1;
         }
@@ -260,6 +263,186 @@
             margin: 0 auto var(--space-5);
             max-width: 600px;
             line-height: 1.7;
+        }
+
+        .upcoming-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: var(--space-3);
+            text-align: left;
+        }
+
+        .upcoming-card {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: var(--space-2);
+            padding: var(--space-4);
+            background: var(--color-bg-card);
+            border: 1px solid var(--color-border);
+            border-radius: 20px;
+            box-shadow: 0 12px 32px var(--color-dark-8);
+        }
+
+        .upcoming-date {
+            color: var(--color-accent);
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .upcoming-card h2 {
+            font-size: clamp(1.3rem, 2.3vw, 1.75rem);
+            line-height: 1.3;
+        }
+
+        .upcoming-card p {
+            color: var(--color-text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .upcoming-actions {
+            display: flex;
+            gap: var(--space-2);
+            margin-top: auto;
+        }
+
+        .upcoming-actions .btn {
+            justify-content: center;
+            font-family: inherit;
+            line-height: inherit;
+        }
+
+        .program-select:hover,
+        .program-select[aria-current="true"] {
+            background: var(--color-orange-8);
+            border-color: var(--color-orange-25);
+            color: var(--color-accent);
+        }
+
+        .program-select:focus-visible {
+            outline: 2px solid var(--color-accent);
+            outline-offset: 3px;
+        }
+
+        .program-panel {
+            margin-top: var(--space-4);
+            text-align: left;
+        }
+
+        .program-section {
+            padding: var(--space-4);
+            background: var(--color-bg-section);
+            border-radius: 24px;
+        }
+
+        .program-section + .program-section {
+            margin-top: var(--space-4);
+        }
+
+        .program-panel[hidden] {
+            display: none;
+        }
+
+        .program-panel h2 {
+            margin-bottom: var(--space-3);
+            font-size: 1.75rem;
+        }
+
+        .event-description p,
+        .description-highlights {
+            color: var(--color-text-secondary);
+            line-height: 1.8;
+        }
+
+        .event-description p + p,
+        .description-highlights {
+            margin-top: var(--space-2);
+        }
+
+        .event-description strong {
+            color: var(--color-text-primary);
+        }
+
+        .description-highlights {
+            display: grid;
+            gap: var(--space-2);
+            list-style: none;
+        }
+
+        .program-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--color-bg-card);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .program-table th,
+        .program-table td {
+            padding: 0.9rem 1rem;
+            border-bottom: 1px solid var(--color-border);
+            vertical-align: top;
+        }
+
+        .program-table th {
+            background: var(--color-orange-8);
+            font-size: 0.85rem;
+            text-align: left;
+        }
+
+        .program-table tr:last-child td {
+            border-bottom: 0;
+        }
+
+        .program-table th:first-child,
+        .program-table td:first-child {
+            width: 110px;
+            white-space: nowrap;
+        }
+
+        .program-table td:first-child {
+            color: var(--color-accent);
+            font-weight: 700;
+        }
+
+        .program-list {
+            padding-left: 1.5rem;
+            color: var(--color-text-secondary);
+        }
+
+        .program-intro {
+            margin-bottom: var(--space-3);
+            color: var(--color-text-secondary);
+        }
+
+        .program-list li + li {
+            margin-top: var(--space-2);
+        }
+
+        @media (max-width: 600px) {
+            .upcoming-actions .btn {
+                padding: var(--space-2);
+            }
+
+            .program-section {
+                padding: var(--space-3);
+            }
+
+            .program-table th,
+            .program-table td {
+                padding: 0.75rem 0.6rem;
+            }
+
+            .program-table th:first-child,
+            .program-table td:first-child {
+                width: 72px;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .upcoming-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .hero-meta {
@@ -334,8 +517,8 @@
 
         /* Sections — only top padding so adjacent sections share single 4rem gap */
         section {
-            padding: var(--space-7) 2rem 0;
-            max-width: 1200px;
+            padding: var(--space-7) var(--space-4) 0;
+            max-width: var(--section-max-width);
             margin: 0 auto;
         }
 
@@ -1160,57 +1343,6 @@
             font-weight: 700;
         }
 
-        .lang-note {
-            background: var(--color-orange-8);
-            border: 1px solid var(--color-orange-20);
-            border-radius: 12px;
-            padding: 1.25rem 1.5rem;
-            margin-bottom: 2rem;
-            font-size: 0.95rem;
-            color: var(--color-text-secondary);
-        }
-
-        .lang-note strong {
-            color: var(--color-text-primary);
-        }
-
-        .agenda-table {
-            width: 100%;
-            border-collapse: collapse;
-            background: var(--color-bg-card);
-            border-radius: 12px;
-            overflow: hidden;
-            margin: 1rem 0;
-        }
-
-        .agenda-table th,
-        .agenda-table td {
-            padding: 1rem 1.25rem;
-            text-align: left;
-            border-bottom: 1px solid var(--color-border);
-        }
-
-        .agenda-table th {
-            background: var(--color-orange-8);
-            font-weight: 600;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .agenda-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .agenda-table .time-col {
-            font-family: 'SF Mono', Monaco, monospace;
-            font-size: 0.9rem;
-            color: var(--color-accent);
-            font-weight: 600;
-            white-space: nowrap;
-            width: 140px;
-        }
-
         .agenda-divider {
             border: none;
             border-top: 1px solid var(--color-border);
@@ -1351,9 +1483,6 @@
             .agenda-section {
                 padding: 1.5rem;
             }
-            .agenda-table .time-col {
-                width: auto;
-            }
         }
 
         /* Past Events */
@@ -1442,22 +1571,10 @@
                 <span>Claude Community Taiwan</span>
             </a>
             <ul class="nav-links">
-                <li><a href="#agenda">
+                <li><a href="#upcoming">
                     <span class="bilingual">
-                        <span class="zh">活動議程</span>
-                        <span class="en">Agenda</span>
-                    </span>
-                </a></li>
-                <li><a href="#features">
-                    <span class="bilingual">
-                        <span class="zh">活動特色</span>
-                        <span class="en">Features</span>
-                    </span>
-                </a></li>
-                <li><a href="#venue">
-                    <span class="bilingual">
-                        <span class="zh">場地</span>
-                        <span class="en">Venue</span>
+                        <span class="zh">近期活動</span>
+                        <span class="en">Upcoming</span>
                     </span>
                 </a></li>
                 <li><a href="#past-events">
@@ -1478,417 +1595,95 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="upcoming">
         <img class="hero-clawd" src="scr/assets/clawd/clawd-wand.png" alt="" aria-hidden="true">
         <img class="hero-clawd-2" src="scr/assets/clawd/clawd-kite.png" alt="" aria-hidden="true">
         <div class="hero-content">
             <h1>
                 <span class="bilingual">
-                    <span class="zh">Skill <span class="highlight">Evals</span> Workshop</span>
-                    <span class="en">Skill <span class="highlight">Evals</span> Workshop</span>
+                    <span class="zh">一起參加 <span class="highlight">Claude</span> 社群活動</span>
+                    <span class="en">Join the <span class="highlight">Claude</span> Community</span>
                 </span>
             </h1>
             <p class="hero-subtitle">
                 <span class="bilingual">
-                    <span class="zh">2026 年 8 月 6 日（週四） @ <a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%8F%B0%E5%8C%97%E5%B8%82%E4%BF%A1%E7%BE%A9%E5%8D%80%E6%9D%BE%E4%BB%81%E8%B7%AF100%E8%99%9F" target="_blank" style="color:var(--color-accent);text-decoration:none;">AWS 台北辦公室 12 樓</a></span>
-                    <span class="en">August 6, 2026 (Thursday) @ <a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%8F%B0%E5%8C%97%E5%B8%82%E4%BF%A1%E7%BE%A9%E5%8D%80%E6%9D%BE%E4%BB%81%E8%B7%AF100%E8%99%9F" target="_blank" style="color:var(--color-accent);text-decoration:none;">AWS Taipei Office, 12F</a></span>
+                    <span class="zh">9 月兩場活動，和台灣的 Claude 夥伴一起動手創作、戶外交流。</span>
+                    <span class="en">Two September events to build together and connect with Taiwan's Claude community.</span>
                 </span>
             </p>
-            <div class="hero-meta">
-                <div class="hero-meta-item">
-                    <div class="label">
-                        <span class="bilingual">
-                            <span class="zh">日期</span>
-                            <span class="en">Date</span>
-                        </span>
+            <div class="upcoming-grid">
+                <article class="upcoming-card">
+                    <time class="upcoming-date" datetime="2026-09-20T17:00:00+08:00">
+                        <span class="bilingual"><span class="zh">2026.09.20（日）・17:00–22:00</span><span class="en">Sep 20, 2026 (Sun) · 17:00–22:00</span></span>
+                    </time>
+                    <h2>Taipei | Claude Code Build Day</h2>
+                    <p><span class="bilingual"><span class="zh">搶先體驗 Claude 新模型，單人或組隊挑戰三大主題，現場打造作品並分享成果。</span><span class="en">Explore Claude's new model, build solo or in a team, and share what you create.</span></span></p>
+                    <div class="upcoming-actions">
+                        <button type="button" class="btn btn-secondary program-select" aria-controls="build-day-program" aria-current="true"><span class="bilingual"><span class="zh">查看</span><span class="en">View</span></span></button>
+                        <a href="https://luma.com/claude-chk0" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><span class="bilingual"><span class="zh">報名</span><span class="en">Register</span></span></a>
                     </div>
-                    <div class="value">
-                        <span class="bilingual">
-                            <span class="zh">2026 年 8 月 6 日（週四）</span>
-                            <span class="en">August 6, 2026 (Thu)</span>
-                        </span>
+                </article>
+                <article class="upcoming-card">
+                    <time class="upcoming-date" datetime="2026-09-26T16:00:00+08:00">
+                        <span class="bilingual"><span class="zh">2026.09.26（六）・16:00–22:00</span><span class="en">Sep 26, 2026 (Sat) · 16:00–22:00</span></span>
+                    </time>
+                    <h2><span class="bilingual"><span class="zh">Taipei | 中秋節 Claude Meetup</span><span class="en">Taipei | Mid-Autumn Claude Meetup</span></span></h2>
+                    <p><span class="bilingual"><span class="zh">中秋戶外 BBQ，和來自全台的 builders、創辦人與 Claude 使用者輕鬆交流。</span><span class="en">A casual outdoor Mid-Autumn BBQ with builders, founders, and Claude users from across Taiwan.</span></span></p>
+                    <div class="upcoming-actions">
+                        <button type="button" class="btn btn-secondary program-select" aria-controls="mid-autumn-program" aria-current="false"><span class="bilingual"><span class="zh">查看</span><span class="en">View</span></span></button>
+                        <a href="https://luma.com/claude-taipei-10" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><span class="bilingual"><span class="zh">報名</span><span class="en">Register</span></span></a>
                     </div>
-                </div>
-                <div class="hero-meta-item">
-                    <div class="label">
-                        <span class="bilingual">
-                            <span class="zh">時間</span>
-                            <span class="en">Time</span>
-                        </span>
-                    </div>
-                    <div class="value">
-                        <span class="bilingual">
-                            <span class="zh">18:30 報到・19:00–21:30</span>
-                            <span class="en">Check-in 18:30 · 19:00–21:30</span>
-                        </span>
-                    </div>
-                </div>
-                <div class="hero-meta-item">
-                    <div class="label">
-                        <span class="bilingual">
-                            <span class="zh">座位</span>
-                            <span class="en">Capacity</span>
-                        </span>
-                    </div>
-                    <div class="value">
-                        <span class="bilingual">
-                            <span class="zh">60 席・開放報名中</span>
-                            <span class="en">60 seats · Open for registration</span>
-                        </span>
-                    </div>
-                </div>
-                <div class="hero-meta-item">
-                    <div class="label">
-                        <span class="bilingual">
-                            <span class="zh">瀏覽全球 Meetup</span>
-                            <span class="en">Browse Global Meetups</span>
-                        </span>
-                    </div>
-                    <div class="value"><a href="https://luma.com/claudecommunity" target="_blank">Lu.ma</a></div>
-                </div>
+                </article>
             </div>
-            <div class="cta-buttons">
-                <a href="https://luma.com/claude-lbtz" target="_blank" class="btn btn-primary">
-                    <span class="bilingual">
-                        <span class="zh">立即報名</span>
-                        <span class="en">Register Now</span>
-                    </span>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Agenda Section -->
-    <section id="agenda">
-        <!-- Language Note (EN only) -->
-        <div class="lang-note" style="display:none;" id="lang-note-en">
-            <strong>🌐 Language Note:</strong> This event is conducted primarily in Traditional Chinese. If you're not fluent in Chinese, you might find it challenging to follow the discussions and full experience. We recommend participants have a comfortable understanding of Traditional Chinese to get the most out of the talks, demos, and conversations at this event.
-        </div>
-
-        <!-- Agenda Table -->
-        <div class="agenda-section">
-            <h2>
-                <span class="bilingual">
-                    <span class="zh">活動議程 | Event Agenda</span>
-                    <span class="en">Event Agenda</span>
-                </span>
-            </h2>
-            <table class="agenda-table">
-                <thead>
-                    <tr>
-                        <th>
-                            <span class="bilingual">
-                                <span class="zh">時間</span>
-                                <span class="en">Time</span>
-                            </span>
-                        </th>
-                        <th>
-                            <span class="bilingual">
-                                <span class="zh">內容</span>
-                                <span class="en">Content</span>
-                            </span>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="time-col">18:30 - 19:00</td>
-                        <td>
-                            <span class="bilingual">
-                                <span class="zh">報到入場 (Check-in)</span>
-                                <span class="en">Check-in</span>
-                            </span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="time-col">19:00 - 19:10</td>
-                        <td>
-                            <span class="bilingual">
-                                <span class="zh">開場、場地介紹</span>
-                                <span class="en">Opening & Venue Introduction</span>
-                            </span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="time-col">19:10 - 20:30</td>
-                        <td>
-                            <span class="bilingual">
-                                <span class="zh"><strong>Workshop — Skill Evals</strong><br><span style="color:var(--color-text-muted);font-size:0.9em;">大家親手操作的實戰 workshop，體驗如何為 Claude Code 打造與驗證 Skill</span></span>
-                                <span class="en"><strong>Workshop — Skill Evals</strong><br><span style="color:var(--color-text-muted);font-size:0.9em;">A hands-on workshop where everyone tries it — see how to build and evaluate Skills for Claude Code</span></span>
-                            </span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="time-col">20:30 - 21:30</td>
-                        <td>
-                            <span class="bilingual">
-                                <span class="zh">自由交流時間 (Networking)</span>
-                                <span class="en">Open Networking</span>
-                            </span>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
-
-    <!-- Speakers Section -->
-    <section id="speakers">
-        <div class="agenda-section">
-            <h2>
-                <span class="bilingual">
-                    <span class="zh">講者陣容</span>
-                    <span class="en">Speaker Lineup</span>
-                </span>
-            </h2>
-            <p>
-                <span class="bilingual">
-                    <span class="zh">由 Claude 官方社群大使 Justin 帶大家一起動手打造與驗證 Claude Code 的 Skill，實戰 Workshop「Skill Evals」。</span>
-                    <span class="en">Claude Community Ambassador Justin leads a hands-on "Skill Evals" workshop on building and evaluating Skills for Claude Code.</span>
-                </span>
-            </p>
-
-            <div class="session-header">
-                <span class="session-time">19:10 - 20:30</span>
-                <span class="session-name">
-                    <span class="bilingual">
-                        <span class="zh">Workshop — Skill Evals</span>
-                        <span class="en">Workshop — Skill Evals</span>
-                    </span>
-                </span>
-                <span class="session-tag">
-                    <span class="bilingual">
-                        <span class="zh">實戰</span>
-                        <span class="en">Hands-on</span>
-                    </span>
-                </span>
-            </div>
-            <div class="speakers-grid speakers-grid-single">
-                <div class="speaker-card">
-                    <img class="speaker-clawd" src="scr/assets/clawd/clawd-cape.png" alt="" aria-hidden="true">
-                    <div class="speaker-name">Justin</div>
-                    <div class="speaker-role">
-                        <span class="bilingual">
-                            <span class="zh">Claude 官方社群大使</span>
-                            <span class="en">Claude Community Ambassador</span>
-                        </span>
-                    </div>
+            <div id="build-day-program" class="program-panel" role="region" aria-labelledby="build-day-description-title">
+                <div class="program-section event-description">
+                    <h2 id="build-day-description-title"><span class="bilingual"><span class="zh">活動說明</span><span class="en">About the Event</span></span></h2>
+                    <p><span class="bilingual"><span class="zh"><strong>Build Day：新模型上線，動手打造你的作品</strong></span><span class="en"><strong>Build Day: A new model is here. Bring your ideas to life.</strong></span></span></p>
+                    <p><span class="bilingual"><span class="zh">Claude 全新模型剛剛發布，這是搶先體驗新功能的最佳時機！</span><span class="en">Claude's brand-new model has just launched. It's the perfect time to try its latest capabilities!</span></span></p>
+                    <p><span class="bilingual"><span class="zh">加入我們的 Build Day，跟社群夥伴一起：</span><span class="en">Join our Build Day and get together with the community to:</span></span></p>
+                    <ul class="description-highlights">
+                        <li><span class="bilingual"><span class="zh">🎬 觀看新模型亮點介紹</span><span class="en">🎬 Watch an introduction to the new model's highlights.</span></span></li>
+                        <li><span class="bilingual"><span class="zh">💻 現場動手打造你的專案（單人或組隊，每組最多 4 人）</span><span class="en">💻 Build your project on site, solo or in a team of up to 4 people.</span></span></li>
+                        <li><span class="bilingual"><span class="zh">🏆 三大挑戰主題任選：<strong>Delight</strong>（做出讓人驚豔的作品）、<strong>Breakthrough</strong>（挑戰過去模型做不到的事）、<strong>Everyday</strong>（解決生活中的真實問題）</span><span class="en">🏆 Choose from three challenge tracks: <strong>Delight</strong> (create something that wows people), <strong>Breakthrough</strong> (tackle something previous models couldn't do), or <strong>Everyday</strong> (solve a real problem in daily life).</span></span></li>
+                        <li><span class="bilingual"><span class="zh">🎤 成果展示 Demo Time，每組 2 分鐘秀出你做的東西</span><span class="en">🎤 Show what you've built during Demo Time, with 2 minutes per team.</span></span></li>
+                        <li><span class="bilingual"><span class="zh">🎁 現場評審中<strong>可能</strong>會有神秘嘉賓加入——為此，展示時建議盡量用英語表達；若使用其他語言展示，也請確保簡報／展示內容以英文撰寫</span><span class="en">🎁 A mystery guest <strong>may</strong> join the on-site judging. We therefore encourage you to present in English where possible. If you present in another language, please make sure your slides or demo content are written in English.</span></span></li>
+                    </ul>
+                </div>
+                <div class="program-section">
+                    <h2 id="build-day-program-title"><span class="bilingual"><span class="zh">活動流程</span><span class="en">Agenda</span></span></h2>
+                    <table class="program-table">
+                        <thead><tr><th scope="col"><span class="bilingual"><span class="zh">時間</span><span class="en">Time</span></span></th><th scope="col"><span class="bilingual"><span class="zh">內容</span><span class="en">Activity</span></span></th></tr></thead>
+                        <tbody>
+                            <tr><td>17:00</td><td><span class="bilingual"><span class="zh">入場、餐點與準備</span><span class="en">Doors open, food and setup</span></span></td></tr>
+                            <tr><td>17:20</td><td><span class="bilingual"><span class="zh">開場與預錄示範影片</span><span class="en">Welcome and pre-recorded demo</span></span></td></tr>
+                            <tr><td>17:30</td><td><span class="bilingual"><span class="zh">現場實作示範</span><span class="en">Live working demos</span></span></td></tr>
+                            <tr><td>17:45</td><td><span class="bilingual"><span class="zh">說明挑戰主題、現場組隊</span><span class="en">Challenge tracks and team formation</span></span></td></tr>
+                            <tr><td>18:00</td><td><span class="bilingual"><span class="zh">開始動手打造</span><span class="en">Build time</span></span></td></tr>
+                            <tr><td>19:30</td><td><span class="bilingual"><span class="zh">成果展示，每組 2 分鐘</span><span class="en">Two-minute team demos</span></span></td></tr>
+                            <tr><td>20:10</td><td><span class="bilingual"><span class="zh">回饋表單、團體合照與作品分享</span><span class="en">Feedback, group photo and project sharing</span></span></td></tr>
+                            <tr><td>20:20</td><td><span class="bilingual"><span class="zh">活動結束</span><span class="en">Close</span></span></td></tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about">
-        <div class="agenda-section">
-            <h2>
-                <span class="bilingual">
-                    <span class="zh">這場活動適合誰</span>
-                    <span class="en">Who Should Attend</span>
-                </span>
-            </h2>
-            <p>
-                <span class="bilingual">
-                    <span class="zh">這場 workshop 會聚焦在如何為<strong>已經寫好的 Claude Code Skill</strong>設計 Evals，驗證它的品質與穩定性。因為會直接進入實作，適合<strong>已經自己寫過 Skill</strong> 的開發者；如果還沒寫過 Skill，難度會偏高，建議先累積一些經驗再來。</span>
-                    <span class="en">This workshop focuses on designing evals for a <strong>Claude Code Skill you've already built</strong>, to verify its quality and reliability. Since we dive straight into hands-on work, it's built for developers who have <strong>already written a Skill of their own</strong> — without that experience, it may be tough to keep up.</span>
-                </span>
-            </p>
-
-            <h4>
-                <span class="bilingual">
-                    <span class="zh">這場活動適合</span>
-                    <span class="en">This Event Is Perfect For</span>
-                </span>
-            </h4>
-            <ul>
-                <li><span class="bilingual"><span class="zh">已經自己寫過至少一個 Claude Code Skill 的開發者</span><span class="en">Developers who have already written at least one Claude Code Skill</span></span></li>
-                <li><span class="bilingual"><span class="zh">想確保自己的 Skill 品質穩定、行為可預期的人</span><span class="en">Anyone who wants their Skill's quality to be stable and its behavior predictable</span></span></li>
-                <li><span class="bilingual"><span class="zh">想學習如何設計 Evals 來驗證 Skill 正確性的人</span><span class="en">Anyone who wants to learn how to design evals that verify a Skill's correctness</span></span></li>
-            </ul>
-
-            <h4>
-                <span class="bilingual">
-                    <span class="zh">你會帶走什麼</span>
-                    <span class="en">What You'll Take Away</span>
-                </span>
-            </h4>
-            <ul>
-                <li><span class="bilingual"><span class="zh">為既有 Skill 設計並撰寫一套 Evals 的完整流程</span><span class="en">A complete workflow for designing and writing an evals suite for an existing Skill</span></span></li>
-                <li><span class="bilingual"><span class="zh">找出 Skill 裡容易被忽略的邊界情況與潛在錯誤的方法</span><span class="en">Techniques for surfacing edge cases and hidden bugs your Skill might be missing</span></span></li>
-                <li><span class="bilingual"><span class="zh">可帶回日常工作的 Skill 開發與驗證最佳實踐</span><span class="en">Skill development and evaluation best practices you can bring back to daily work</span></span></li>
-                <li><span class="bilingual"><span class="zh">與其他開發者面對面交流的一小時</span><span class="en">An hour of face-to-face networking with fellow developers</span></span></li>
-            </ul>
-
-            <hr class="agenda-divider">
-
-            <div class="agenda-callout agenda-callout-accent">
-                <h4>
-                    <img class="callout-clawd" src="scr/assets/clawd/clawd-bubble.png" alt="" aria-hidden="true">
-                    <span class="bilingual">
-                        <span class="zh">注意事項</span>
-                        <span class="en">Important Notes</span>
-                    </span>
-                </h4>
-                <ul>
-                    <li>
-                        <span class="bilingual">
-                            <span class="zh"><strong>關於出席記錄：</strong>位置非常珍貴，我們會記錄出席。無故缺席會影響下次報名的篩選，但提前告知或有合理原因完全沒問題</span>
-                            <span class="en"><strong>Attendance Policy:</strong> Spots are limited, so we track attendance. No-shows may affect future selection — but advance notice or a legitimate reason is completely fine</span>
-                        </span>
-                    </li>
-                    <li>
-                        <span class="bilingual">
-                            <span class="zh"><strong>無法參加請提前告知：</strong>如果不能來，請盡早通知或自行取消報名，把位置留給其他想來的朋友</span>
-                            <span class="en"><strong>Let Us Know Early:</strong> If you can't make it, tell us or cancel as soon as possible so the spot can go to someone else</span>
-                        </span>
-                    </li>
-                    <li>
-                        <span class="bilingual">
-                            <span class="zh"><strong>現場備有簡單餐食：</strong>怕來不及吃晚餐可以放心，現場會準備簡單餐食與飲水機；也提供 Claude 官方貼紙</span>
-                            <span class="en"><strong>Food Provided:</strong> Simple food will be available on site in case you don't have time for dinner — water dispensers too, plus official Claude stickers</span>
-                        </span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section id="features">
-        <div class="agenda-section">
-            <h2>
-                <span class="bilingual">
-                    <span class="zh">活動特色 | Event Highlights</span>
-                    <span class="en">Event Highlights</span>
-                </span>
-            </h2>
-            <p>
-                <span class="bilingual">
-                    <span class="zh">為什麼這場 Workshop 值得期待</span>
-                    <span class="en">Why this workshop is worth attending</span>
-                </span>
-            </p>
-            <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon"><img src="scr/assets/clawd/clawd-lightbulb.png" alt="Clawd holding a lightbulb" loading="lazy"></div>
-                <h3>
-                    <span class="bilingual">
-                        <span class="zh">打造與驗證 Skill</span>
-                        <span class="en">Build & Evaluate Skills</span>
-                    </span>
-                </h3>
-                <p>
-                    <span class="bilingual">
-                        <span class="zh">大家親手為自己寫好的 Claude Code Skill 設計 Evals，實際驗證它的品質與穩定性</span>
-                        <span class="en">A hands-on workshop where you design evals for a Claude Code Skill you've built, to verify its quality and reliability</span>
-                    </span>
-                </p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon"><img src="scr/assets/clawd/clawd-magnifier.png" alt="Clawd as a detective" loading="lazy"></div>
-                <h3>
-                    <span class="bilingual">
-                        <span class="zh">抓出 Skill 的邊界情況</span>
-                        <span class="en">Catch Skill Edge Cases</span>
-                    </span>
-                </h3>
-                <p>
-                    <span class="bilingual">
-                        <span class="zh">學習如何設計測試案例，找出 Skill 容易被忽略的邊界情況與潛在錯誤</span>
-                        <span class="en">Learn how to design test cases that surface the edge cases and hidden bugs your Skill might be missing</span>
-                    </span>
-                </p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon"><img src="scr/assets/clawd/clawd-happy.png" alt="Happy Clawd" loading="lazy"></div>
-                <h3>
-                    <span class="bilingual">
-                        <span class="zh">開發者面對面交流</span>
-                        <span class="en">Developer Networking</span>
-                    </span>
-                </h3>
-                <p>
-                    <span class="bilingual">
-                        <span class="zh">會後一小時自由交流，分享你的 Claude Code 經驗、挑戰與創意應用，認識志同道合的夥伴</span>
-                        <span class="en">An hour to swap Claude Code experiences, challenges, and creative use cases with like-minded engineers</span>
-                    </span>
-                </p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon"><img src="scr/assets/clawd/clawd-heart.png" alt="Clawd with a heart" loading="lazy"></div>
-                <h3>
-                    <span class="bilingual">
-                        <span class="zh">Claude 官方貼紙</span>
-                        <span class="en">Official Claude Stickers</span>
-                    </span>
-                </h3>
-                <p>
-                    <span class="bilingual">
-                        <span class="zh">現場提供 Claude 官方貼紙，也備有簡單餐食與飲水機，不怕來不及吃晚餐</span>
-                        <span class="en">Official Claude stickers on site, plus simple food and water dispensers — no need to worry about dinner</span>
-                    </span>
-                </p>
-            </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Venue Section -->
-    <section id="venue">
-        <div class="agenda-section">
-        <div class="venue-content">
-            <div class="venue-map">
-                <iframe
-                    src="https://maps.google.com/maps?q=%E5%8F%B0%E5%8C%97%E5%B8%82%E4%BF%A1%E7%BE%A9%E5%8D%80%E6%9D%BE%E4%BB%81%E8%B7%AF100%E8%99%9F&t=&z=16&ie=UTF8&iwloc=&output=embed"
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
-            <div class="venue-info">
-                <div class="venue-label">Venue</div>
-                <h2 class="venue-title">
-                    <span class="bilingual">
-                        <span class="zh">AWS 台北辦公室 12 樓</span>
-                        <span class="en">AWS Taipei Office, 12F</span>
-                    </span>
-                </h2>
-                <p class="venue-address">
-                    <span class="bilingual">
-                        <span class="zh">台北市信義區松仁路 100 號 12 樓（台北南山廣場・微風南山）</span>
-                        <span class="en">12F, No. 100, Songren Rd., Xinyi Dist., Taipei City (Taipei Nanshan Plaza)</span>
-                    </span>
-                </p>
-                <p class="venue-transit">
-                    <svg class="transit-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="16" rx="2"/><path d="M4 11h16"/><path d="M12 3v8"/><circle cx="8" cy="15" r="1"/><circle cx="16" cy="15" r="1"/><path d="M8 19l-2 3"/><path d="M16 19l2 3"/></svg>
-                    <span class="bilingual">
-                        <span class="zh">捷運「<strong>象山站</strong>」<strong>1 號出口</strong>步行約 5 分鐘</span>
-                        <span class="en">MRT <strong>Xiangshan Station</strong>, <strong>Exit 1</strong> — about a 5-minute walk</span>
-                    </span>
-                </p>
-                <a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%8F%B0%E5%8C%97%E5%B8%82%E4%BF%A1%E7%BE%A9%E5%8D%80%E6%9D%BE%E4%BB%81%E8%B7%AF100%E8%99%9F" target="_blank" class="btn btn-secondary">
-                    <span class="bilingual">
-                        <span class="zh">在 Google Maps 中開啟</span>
-                        <span class="en">Open in Google Maps</span>
-                    </span>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                </a>
-                <div class="venue-features">
-                    <span class="venue-feature">
-                        <span class="bilingual">
-                            <span class="zh">信義區</span>
-                            <span class="en">Xinyi District</span>
-                        </span>
-                    </span>
-                    <span class="venue-feature">
-                        <span class="bilingual">
-                            <span class="zh">近象山站</span>
-                            <span class="en">Near Xiangshan Station</span>
-                        </span>
-                    </span>
+            <div id="mid-autumn-program" class="program-panel" role="region" aria-labelledby="mid-autumn-description-title" hidden>
+                <div class="program-section event-description">
+                    <h2 id="mid-autumn-description-title"><span class="bilingual"><span class="zh">活動說明</span><span class="en">About the Event</span></span></h2>
+                    <p><span class="bilingual"><span class="zh">Anthropic 團隊鼓勵我們舉辦「touch grass」活動：不只是聊 Claude 和 AI，而是專注在認識新朋友、建立真實的人際連結。這場聚會正是如此。</span><span class="en">The Anthropic team encouraged us to host a "touch grass" event: a gathering that goes beyond talking about Claude and AI to focus on meeting new people and building real connections. That's exactly what this meetup is about.</span></span></p>
+                    <p><span class="bilingual"><span class="zh">無論你是 Claude 新手還是資深玩家，都歡迎參加。一起用最對味的方式過中秋：在戶外，與好夥伴相聚。</span><span class="en">Whether you're new to Claude or a seasoned user, you're welcome to join. Let's celebrate Mid-Autumn the way it should be: outdoors, in good company.</span></span></p>
+                    <p><span class="bilingual"><span class="zh">這是一場非常輕鬆、自由流動的聚會：想幾點到就幾點到，想待多久就待多久，來打個招呼也行，待好待滿六小時也行。</span><span class="en">This is a relaxed, free-flowing gathering. Arrive whenever you like and stay as long as you want, whether you're dropping by to say hello or spending the full six hours with us.</span></span></p>
+                    <p><span class="bilingual"><span class="zh">小孩和狗狗都歡迎，帶著全家一起來過節吧 🐶</span><span class="en">Kids and dogs are welcome. Bring the whole family along to celebrate! 🐶</span></span></p>
+                </div>
+                <div class="program-section">
+                    <h2 id="mid-autumn-program-title"><span class="bilingual"><span class="zh">活動內容</span><span class="en">Activities</span></span></h2>
+                    <p class="program-intro"><span class="bilingual"><span class="zh">活動時間：16:00–22:00</span><span class="en">Event hours: 16:00–22:00</span></span></p>
+                    <ol class="program-list">
+                        <li><span class="bilingual"><span class="zh">戶外 BBQ，以 finger food 形式提供餐點</span><span class="en">Outdoor BBQ with finger food</span></span></li>
+                        <li><span class="bilingual"><span class="zh">與全台的 builders、創辦人及 Claude 使用者輕鬆交流</span><span class="en">Casual conversations with builders, founders and Claude users from across Taiwan</span></span></li>
+                        <li><span class="bilingual"><span class="zh">感受中秋氛圍，和社群夥伴相聚</span><span class="en">Mid-Autumn vibes and time with the community</span></span></li>
+                    </ol>
                 </div>
             </div>
-        </div>
         </div>
     </section>
 
@@ -1908,6 +1703,19 @@
                 </span>
             </p>
             <div class="past-list">
+                <a class="past-item" href="https://luma.com/claude-lbtz" target="_blank" rel="noopener noreferrer">
+                    <div class="past-date">2026.08.06</div>
+                    <div class="past-body">
+                        <h3 class="past-title">Skill Evals Workshop</h3>
+                        <p class="past-meta">
+                            <span class="bilingual">
+                                <span class="zh">AWS 台北辦公室 12 樓・為既有 Claude Code Skill 設計 Evals 的實作工作坊。</span>
+                                <span class="en">AWS Taipei Office, 12F · A hands-on workshop on designing evals for existing Claude Code Skills.</span>
+                            </span>
+                        </p>
+                    </div>
+                    <svg class="past-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+                </a>
                 <a class="past-item" href="https://luma.com/claude-u8gm" target="_blank" rel="noopener">
                     <div class="past-date">2026.07.04</div>
                     <div class="past-body">
@@ -2213,17 +2021,39 @@
 <script>
         function toggleLanguage() {
             const body = document.body;
-            const langNote = document.getElementById('lang-note-en');
             if (body.classList.contains('lang-zh')) {
                 body.classList.remove('lang-zh');
                 body.classList.add('lang-en');
-                if (langNote) langNote.style.display = 'block';
             } else {
                 body.classList.remove('lang-en');
                 body.classList.add('lang-zh');
-                if (langNote) langNote.style.display = 'none';
             }
         }
+
+        // Scroll only the document, keeping the destination below the fixed navigation.
+        function scrollPageTo(target) {
+            const navOffset = document.querySelector('nav').getBoundingClientRect().height + 16;
+            window.scrollTo({
+                top: target ? Math.max(0, window.scrollY + target.getBoundingClientRect().top - navOffset) : 0,
+                behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'
+            });
+        }
+
+        document.querySelectorAll('.program-select').forEach(button => {
+            button.addEventListener('click', () => {
+                const target = document.getElementById(button.getAttribute('aria-controls'));
+                if (!target) return;
+
+                document.querySelectorAll('.program-panel').forEach(panel => {
+                    panel.hidden = panel !== target;
+                });
+                document.querySelectorAll('.program-select').forEach(choice => {
+                    choice.setAttribute('aria-current', String(choice === button));
+                });
+
+                requestAnimationFrame(() => scrollPageTo(target));
+            });
+        });
 
         // Member modal — open full info when an avatar card is clicked
         (function () {
@@ -2285,12 +2115,14 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+                const href = this.getAttribute('href');
+                if (href === '#') {
+                    scrollPageTo(null);
+                    return;
+                }
+                const target = document.getElementById(href.slice(1));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    scrollPageTo(target);
                 }
             });
         });
@@ -2310,7 +2142,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.feature-card, .agenda-section, .speaker-card, .venue-content, .contact-section').forEach((el, i) => {
+        document.querySelectorAll('.agenda-section, .contact-section').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(24px)';
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
