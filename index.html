@@ -196,6 +196,14 @@
         .event-agenda .leader { flex: 1; min-width: 24px; border-bottom: 1px dotted rgba(20, 20, 19, 0.35); align-self: flex-end; margin-bottom: 0.4em; }
         .event-agenda .who { color: var(--color-muted); font-size: 14px; }
 
+        /* Community */
+        .community-row { display: flex; gap: 32px 40px; align-items: center; flex-wrap: wrap; margin-top: 40px; }
+        .community-copy { flex: 1 1 320px; }
+        .community-copy p { font-size: 16px; line-height: 1.75; color: var(--color-text-2); max-width: 36em; }
+        .community-copy .btn { margin-top: 28px; }
+        .community-qr { display: flex; flex-direction: column; align-items: center; gap: 10px; margin: 0; font-size: 13px; color: var(--color-muted); }
+        .community-qr img { box-sizing: content-box; width: 132px; height: 132px; border: 1px solid var(--color-text); border-radius: var(--radius-md); }
+
         /* Past events */
         .past-list { display: flex; flex-direction: column; border-top: 1px solid var(--color-text); }
         .past-item {
@@ -290,6 +298,7 @@
             .past-item { grid-template-columns: minmax(0, 1fr) auto; }
             .past-date { grid-column: 1 / -1; }
             .past-cta { grid-column: 2; grid-row: 2; }
+            .community-qr { display: none; }
             .team h2 { font-size: 30px; }
         }
 
@@ -331,6 +340,7 @@
             <span>Claude Community Taiwan</span>
         </a>
         <a class="nav-link" href="#upcoming"><span class="zh">近期活動</span><span class="en">Upcoming</span></a>
+        <a class="nav-link" href="#community"><span class="zh">社群</span><span class="en">Community</span></a>
         <a class="nav-link" href="#past-events"><span class="zh">歷史活動</span><span class="en">Past Events</span></a>
         <a class="nav-link" href="#team"><span class="zh">團隊</span><span class="en">Team</span></a>
         <span class="nav-spacer"></span>
@@ -407,6 +417,21 @@
                 </div>
             </div>
             -->
+        </section>
+
+        <!-- Community -->
+        <section class="section" id="community" aria-labelledby="community-title">
+            <h2 class="section-title" id="community-title"><span class="zh">Discord 社群</span><span class="en">Discord Community</span></h2>
+            <div class="community-row">
+                <figure class="community-qr">
+                    <img src="scr/assets/discord-qr.svg" alt="Discord QR code" width="132" height="132" loading="lazy">
+                    <figcaption><span class="zh">用手機掃描加入</span><span class="en">Scan to join</span></figcaption>
+                </figure>
+                <div class="community-copy">
+                    <p><span class="zh">活動結束後，話題在 Discord 繼續。分享你正在做的東西、問問題、找一起動手的夥伴。</span><span class="en">The conversation carries on after each event. Share what you're building, ask questions, and find people to build with.</span></p>
+                    <a class="btn btn-primary" href="https://discord.gg/C7P4zbGz54" target="_blank" rel="noopener noreferrer"><span class="zh">加入 Discord ↗</span><span class="en">Join the Discord ↗</span></a>
+                </div>
+            </div>
         </section>
 
         <!-- Past events -->
